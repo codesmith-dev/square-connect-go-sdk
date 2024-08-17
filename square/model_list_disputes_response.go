@@ -15,6 +15,6 @@ type ListDisputesResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The list of disputes.
 	Disputes []Dispute `json:"disputes,omitempty"`
-	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
+	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type_** | **string** | Represents the type of the Quick Amount. See [CatalogQuickAmountType](#type-catalogquickamounttype) for possible values | [default to null]
+**Type_** | **string** | Represents the type of the Quick Amount. | [default to null]
 **Amount** | [***Money**](Money.md) |  | [default to null]
 **Score** | **int64** | Describes the ranking of the Quick Amount provided by machine learning model, in the range [0, 100]. MANUAL type amount will always have score &#x3D; 100. | [optional] [default to null]
 **Ordinal** | **int64** | The order in which this Quick Amount should be displayed. | [optional] [default to null]

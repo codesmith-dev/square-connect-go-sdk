@@ -9,6 +9,5 @@
  */
 package square
 
-// A request to delete a `Shift`
-type DeleteShiftRequest struct {
-}
+// A request to delete a `Shift`.
+type DeleteShiftRequest struct{}

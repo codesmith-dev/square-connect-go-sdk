@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the fields that can be provided in a request to the [RetrieveCustomerGroup](#endpoint-retrievecustomergroup) endpoint.
-type RetrieveCustomerGroupRequest struct {
-}
+// Defines the fields that can be included in a request to the [RetrieveCustomerGroup](https://developer.squareup.com/reference/square_2024-07-17/customer-groups-api/retrieve-customer-group) endpoint.
+type RetrieveCustomerGroupRequest struct{}

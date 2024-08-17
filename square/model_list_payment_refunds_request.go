@@ -9,21 +9,21 @@
  */
 package square
 
-// Retrieves a list of refunds for the account making the request.  The maximum results per page is 100.
+// Describes a request to list refunds using [ListPaymentRefunds](https://developer.squareup.com/reference/square_2024-07-17/refunds-api/list-payment-refunds).  The maximum results per page is 100.
 type ListPaymentRefundsRequest struct {
-	// The timestamp for the beginning of the requested reporting period, in RFC 3339 format.  Default: The current time minus one year.
+	// Indicates the start of the time range to retrieve each `PaymentRefund` for, in RFC 3339  format.  The range is determined using the `created_at` field for each `PaymentRefund`.   Default: The current time minus one year.
 	BeginTime string `json:"begin_time,omitempty"`
-	// The timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time.
+	// Indicates the end of the time range to retrieve each `PaymentRefund` for, in RFC 3339  format.  The range is determined using the `created_at` field for each `PaymentRefund`.  Default: The current time.
 	EndTime string `json:"end_time,omitempty"`
-	// The order in which results are listed: - `ASC` - Oldest to newest. - `DESC` - Newest to oldest (default).
+	// The order in which results are listed by `PaymentRefund.created_at`: - `ASC` - Oldest to newest. - `DESC` - Newest to oldest (default).
 	SortOrder string `json:"sort_order,omitempty"`
-	// A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
+	// A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
 	Cursor string `json:"cursor,omitempty"`
 	// Limit results to the location supplied. By default, results are returned for all locations associated with the seller.
 	LocationId string `json:"location_id,omitempty"`
-	// If provided, only refunds with the given status are returned. For a list of refund status values, see `PaymentRefund`.  Default: If omitted, refunds are returned regardless of their status.
+	// If provided, only refunds with the given status are returned. For a list of refund status values, see [PaymentRefund](https://developer.squareup.com/reference/square_2024-07-17/objects/PaymentRefund).  Default: If omitted, refunds are returned regardless of their status.
 	Status string `json:"status,omitempty"`
-	// If provided, only refunds with the given source type are returned. - `CARD` - List refunds only for payments where `CARD` was specified as the payment source.  Default: If omitted, refunds are returned regardless of the source type.
+	// If provided, only returns refunds whose payments have the indicated source type. Current values include `CARD`, `BANK_ACCOUNT`, `WALLET`, `CASH`, and `EXTERNAL`. For information about these payment source types, see [Take Payments](https://developer.squareup.com/docs/payments-api/take-payments).  Default: If omitted, refunds are returned regardless of the source type.
 	SourceType string `json:"source_type,omitempty"`
 	// The maximum number of results to be returned in a single page.  It is possible to receive fewer results than the specified limit on a given page.  If the supplied value is greater than 100, no more than 100 results are returned.  Default: 100
 	Limit int32 `json:"limit,omitempty"`

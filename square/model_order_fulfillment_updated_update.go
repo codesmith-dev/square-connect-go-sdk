@@ -11,10 +11,10 @@ package square
 
 // Information about fulfillment updates.
 type OrderFulfillmentUpdatedUpdate struct {
-	// Unique ID that identifies the fulfillment only within this order.
+	// A unique ID that identifies the fulfillment only within this order.
 	FulfillmentUid string `json:"fulfillment_uid,omitempty"`
-	// The state of the fulfillment before the change. Will not be populated if the fulfillment is created with this new Order version. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+	// The state of the fulfillment before the change. The state is not populated if the fulfillment is created with this new `Order` version.
 	OldState string `json:"old_state,omitempty"`
-	// The state of the fulfillment after the change. May be equal to old_state if a non-state field was changed on the fulfillment (e.g. tracking number). See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+	// The state of the fulfillment after the change. The state might be equal to `old_state` if a non-state field was changed on the fulfillment (such as the tracking number).
 	NewState string `json:"new_state,omitempty"`
 }

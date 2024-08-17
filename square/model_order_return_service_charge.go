@@ -11,24 +11,30 @@ package square
 
 // Represents the service charge applied to the original order.
 type OrderReturnServiceCharge struct {
-	// Unique ID that identifies the return service charge only within this order.
+	// A unique ID that identifies the return service charge only within this order.
 	Uid string `json:"uid,omitempty"`
-	// `uid` of the Service Charge from the Order containing the original charge of the service charge. `source_service_charge_uid` is `null` for unlinked returns.
+	// The service charge `uid` from the order containing the original service charge. `source_service_charge_uid` is `null` for unlinked returns.
 	SourceServiceChargeUid string `json:"source_service_charge_uid,omitempty"`
 	// The name of the service charge.
 	Name string `json:"name,omitempty"`
-	// The catalog object ID of the associated `CatalogServiceCharge`.
+	// The catalog object ID of the associated [OrderServiceCharge](https://developer.squareup.com/reference/square_2024-07-17/objects/OrderServiceCharge).
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The percentage of the service charge, as a string representation of a decimal number. For example, a value of `\"7.25\"` corresponds to a percentage of 7.25%.  Exactly one of `percentage` or `amount_money` should be set.
-	Percentage string `json:"percentage,omitempty"`
-	AmountMoney *Money `json:"amount_money,omitempty"`
-	AppliedMoney *Money `json:"applied_money,omitempty"`
-	TotalMoney *Money `json:"total_money,omitempty"`
+	// The version of the catalog object that this service charge references.
+	CatalogVersion int64 `json:"catalog_version,omitempty"`
+	// The percentage of the service charge, as a string representation of a decimal number. For example, a value of `\"7.25\"` corresponds to a percentage of 7.25%.  Either `percentage` or `amount_money` should be set, but not both.
+	Percentage    string `json:"percentage,omitempty"`
+	AmountMoney   *Money `json:"amount_money,omitempty"`
+	AppliedMoney  *Money `json:"applied_money,omitempty"`
+	TotalMoney    *Money `json:"total_money,omitempty"`
 	TotalTaxMoney *Money `json:"total_tax_money,omitempty"`
-	// The calculation phase after which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
+	// The calculation phase after which to apply the service charge.
 	CalculationPhase string `json:"calculation_phase,omitempty"`
 	// Indicates whether the surcharge can be taxed. Service charges calculated in the `TOTAL_PHASE` cannot be marked as taxable.
 	Taxable bool `json:"taxable,omitempty"`
-	// The list of references to `OrderReturnTax` entities applied to the `OrderReturnServiceCharge`. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderReturnTax` that is being applied to the `OrderReturnServiceCharge`. On reads, the amount applied is populated.
+	// The list of references to `OrderReturnTax` entities applied to the `OrderReturnServiceCharge`. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderReturnTax` that is being applied to the `OrderReturnServiceCharge`. On reads, the applied amount is populated.
 	AppliedTaxes []OrderLineItemAppliedTax `json:"applied_taxes,omitempty"`
+	// The treatment type of the service charge.
+	TreatmentType string `json:"treatment_type,omitempty"`
+	// Indicates the level at which the apportioned service charge applies. For `ORDER` scoped service charges, Square generates references in `applied_service_charges` on all order line items that do not have them. For `LINE_ITEM` scoped service charges, the service charge only applies to line items with a service charge reference in their `applied_service_charges` field.  This field is immutable. To change the scope of an apportioned service charge, you must delete the apportioned service charge and re-add it as a new apportioned service charge.
+	Scope string `json:"scope,omitempty"`
 }

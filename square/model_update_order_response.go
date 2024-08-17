@@ -9,7 +9,7 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the [UpdateOrder](#endpoint-orders-updateorder) endpoint.
+// Defines the fields that are included in the response body of a request to the [UpdateOrder](https://developer.squareup.com/reference/square_2024-07-17/orders-api/update-order) endpoint.
 type UpdateOrderResponse struct {
 	Order *Order `json:"order,omitempty"`
 	// Any errors that occurred during the request.

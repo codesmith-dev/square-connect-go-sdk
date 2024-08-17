@@ -9,18 +9,20 @@
  */
 package square
 
-// Represents Square's estimated quantity of items in a particular state at a particular location based on the known history of physical counts and inventory adjustments.
+// Represents Square-estimated quantity of items in a particular state at a particular seller location based on the known history of physical counts and inventory adjustments.
 type InventoryCount struct {
-	// The Square generated ID of the `CatalogObject` being tracked.
+	// The Square-generated ID of the [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The `CatalogObjectType` of the `CatalogObject` being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](https://developer.squareup.com/reference/square_2024-07-17/enums/CatalogObjectType) of the [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) being tracked.   The Inventory API supports setting and reading the `\"catalog_object_type\": \"ITEM_VARIATION\"` field value.  In addition, it can also read the `\"catalog_object_type\": \"ITEM\"` field value that is set by the Square Restaurants app.
 	CatalogObjectType string `json:"catalog_object_type,omitempty"`
-	// The current `InventoryState` for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
+	// The current [inventory state](https://developer.squareup.com/reference/square_2024-07-17/enums/InventoryState) for the related quantity of items.
 	State string `json:"state,omitempty"`
-	// The Square ID of the `Location` where the related quantity of items are being tracked.
+	// The Square-generated ID of the [Location](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) where the related quantity of items is being tracked.
 	LocationId string `json:"location_id,omitempty"`
 	// The number of items affected by the estimated count as a decimal string. Can support up to 5 digits after the decimal point.
 	Quantity string `json:"quantity,omitempty"`
-	// A read-only timestamp in RFC 3339 format that indicates when Square received the most recent physical count or adjustment that had an affect on the estimated count.
+	// An RFC 3339-formatted timestamp that indicates when the most recent physical count or adjustment affecting the estimated count is received.
 	CalculatedAt string `json:"calculated_at,omitempty"`
+	// Whether the inventory count is for composed variation (TRUE) or not (FALSE). If true, the inventory count will not be present in the response of any of these endpoints: [BatchChangeInventory](https://developer.squareup.com/reference/square_2024-07-17/inventory-api/batch-change-inventory), [BatchRetrieveInventoryChanges](https://developer.squareup.com/reference/square_2024-07-17/inventory-api/batch-retrieve-inventory-changes), [BatchRetrieveInventoryCounts](https://developer.squareup.com/reference/square_2024-07-17/inventory-api/batch-retrieve-inventory-counts), and [RetrieveInventoryChanges](https://developer.squareup.com/reference/square_2024-07-17/inventory-api/retrieve-inventory-changes).
+	IsEstimated bool `json:"is_estimated,omitempty"`
 }

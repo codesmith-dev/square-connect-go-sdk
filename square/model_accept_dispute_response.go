@@ -12,6 +12,6 @@ package square
 // Defines the fields in an `AcceptDispute` response.
 type AcceptDisputeResponse struct {
 	// Information about errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Dispute *Dispute `json:"dispute,omitempty"`
+	Errors  []ModelError `json:"errors,omitempty"`
+	Dispute *Dispute     `json:"dispute,omitempty"`
 }

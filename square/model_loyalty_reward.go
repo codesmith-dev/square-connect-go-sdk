@@ -9,18 +9,19 @@
  */
 package square
 
+// Represents a contract to redeem loyalty points for a [reward tier](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyProgramRewardTier) discount. Loyalty rewards can be in an ISSUED, REDEEMED, or DELETED state.  For more information, see [Manage loyalty rewards](https://developer.squareup.com/docs/loyalty-api/loyalty-rewards).
 type LoyaltyReward struct {
 	// The Square-assigned ID of the loyalty reward.
 	Id string `json:"id,omitempty"`
-	// The status of a loyalty reward. See [LoyaltyRewardStatus](#type-loyaltyrewardstatus) for possible values
+	// The status of a loyalty reward.
 	Status string `json:"status,omitempty"`
-	// The Square-assigned ID of the `loyalty account` to which the reward belongs.
+	// The Square-assigned ID of the [loyalty account](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyAccount) to which the reward belongs.
 	LoyaltyAccountId string `json:"loyalty_account_id"`
-	// The Square-assigned ID of the `reward tier` used to create the reward.
+	// The Square-assigned ID of the [reward tier](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyProgramRewardTier) used to create the reward.
 	RewardTierId string `json:"reward_tier_id"`
 	// The number of loyalty points used for the reward.
 	Points int32 `json:"points,omitempty"`
-	// The Square-assigned ID of the `order` to which the reward is attached.
+	// The Square-assigned ID of the [order](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) to which the reward is attached.
 	OrderId string `json:"order_id,omitempty"`
 	// The timestamp when the reward was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`

@@ -11,6 +11,6 @@ package square
 
 type RetrieveInventoryAdjustmentResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	Errors     []ModelError         `json:"errors,omitempty"`
 	Adjustment *InventoryAdjustment `json:"adjustment,omitempty"`
 }

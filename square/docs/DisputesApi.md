@@ -5,10 +5,10 @@ All URIs are relative to *https://connect.squareup.com/*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AcceptDispute**](DisputesApi.md#AcceptDispute) | **Post** /v2/disputes/{dispute_id}/accept | AcceptDispute
-[**CreateDisputeEvidenceText**](DisputesApi.md#CreateDisputeEvidenceText) | **Post** /v2/disputes/{dispute_id}/evidence_text | CreateDisputeEvidenceText
+[**CreateDisputeEvidenceText**](DisputesApi.md#CreateDisputeEvidenceText) | **Post** /v2/disputes/{dispute_id}/evidence-text | CreateDisputeEvidenceText
+[**DeleteDisputeEvidence**](DisputesApi.md#DeleteDisputeEvidence) | **Delete** /v2/disputes/{dispute_id}/evidence/{evidence_id} | DeleteDisputeEvidence
 [**ListDisputeEvidence**](DisputesApi.md#ListDisputeEvidence) | **Get** /v2/disputes/{dispute_id}/evidence | ListDisputeEvidence
 [**ListDisputes**](DisputesApi.md#ListDisputes) | **Get** /v2/disputes | ListDisputes
-[**RemoveDisputeEvidence**](DisputesApi.md#RemoveDisputeEvidence) | **Delete** /v2/disputes/{dispute_id}/evidence/{evidence_id} | RemoveDisputeEvidence
 [**RetrieveDispute**](DisputesApi.md#RetrieveDispute) | **Get** /v2/disputes/{dispute_id} | RetrieveDispute
 [**RetrieveDisputeEvidence**](DisputesApi.md#RetrieveDisputeEvidence) | **Get** /v2/disputes/{dispute_id}/evidence/{evidence_id} | RetrieveDisputeEvidence
 [**SubmitEvidence**](DisputesApi.md#SubmitEvidence) | **Post** /v2/disputes/{dispute_id}/submit-evidence | SubmitEvidence
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
   **body** | [**CreateDisputeEvidenceTextRequest**](CreateDisputeEvidenceTextRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **disputeId** | **string**| The ID of the dispute you want to upload evidence for. | 
+  **disputeId** | **string**| The ID of the dispute for which you want to upload evidence. | 
 
 ### Return type
 
@@ -72,8 +72,37 @@ See the corresponding object definition for field details. |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **DeleteDisputeEvidence**
+> DeleteDisputeEvidenceResponse DeleteDisputeEvidence(ctx, disputeId, evidenceId)
+DeleteDisputeEvidence
+
+Removes specified evidence from a dispute. Square does not send the bank any evidence that is removed.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **disputeId** | **string**| The ID of the dispute from which you want to remove evidence. | 
+  **evidenceId** | **string**| The ID of the evidence you want to remove. | 
+
+### Return type
+
+[**DeleteDisputeEvidenceResponse**](DeleteDisputeEvidenceResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ListDisputeEvidence**
-> ListDisputeEvidenceResponse ListDisputeEvidence(ctx, disputeId)
+> ListDisputeEvidenceResponse ListDisputeEvidence(ctx, disputeId, optional)
 ListDisputeEvidence
 
 Returns a list of evidence associated with a dispute.
@@ -84,6 +113,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **disputeId** | **string**| The ID of the dispute. | 
+ **optional** | ***DisputesApiListDisputeEvidenceOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a DisputesApiListDisputeEvidenceOpts struct
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination). | 
 
 ### Return type
 
@@ -117,42 +154,13 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a DisputesApiListDisputesOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination). | 
- **states** | **optional.String**| The dispute states to filter the result. If not specified, the endpoint returns all open disputes (the dispute status is not &#x60;INQUIRY_CLOSED&#x60;, &#x60;WON&#x60;, or &#x60;LOST&#x60;). | 
- **locationId** | **optional.String**| The ID of the location for which to return a list of disputes. If not specified, the endpoint returns all open disputes (the dispute status is not &#x60;INQUIRY_CLOSED&#x60;, &#x60;WON&#x60;, or &#x60;LOST&#x60;) associated with all locations. | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination). | 
+ **states** | **optional.String**| The dispute states used to filter the result. If not specified, the endpoint returns all disputes. | 
+ **locationId** | **optional.String**| The ID of the location for which to return a list of disputes. If not specified, the endpoint returns disputes associated with all locations. | 
 
 ### Return type
 
 [**ListDisputesResponse**](ListDisputesResponse.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **RemoveDisputeEvidence**
-> RemoveDisputeEvidenceResponse RemoveDisputeEvidence(ctx, disputeId, evidenceId)
-RemoveDisputeEvidence
-
-Removes specified evidence from a dispute.  Square does not send the bank any evidence that is removed. Also, you cannot remove evidence after submitting it to the bank using [SubmitEvidence](/reference/square/disputes-api/submit-evidence).
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **disputeId** | **string**| The ID of the dispute you want to remove evidence from. | 
-  **evidenceId** | **string**| The ID of the evidence you want to remove. | 
-
-### Return type
-
-[**RemoveDisputeEvidenceResponse**](RemoveDisputeEvidenceResponse.md)
 
 ### Authorization
 
@@ -197,14 +205,14 @@ Name | Type | Description  | Notes
 > RetrieveDisputeEvidenceResponse RetrieveDisputeEvidence(ctx, disputeId, evidenceId)
 RetrieveDisputeEvidence
 
-Returns the specific evidence metadata associated with a specific dispute.  You must maintain a copy of the evidence you upload if you want to reference it later. You cannot download the evidence after you upload it.
+Returns the metadata for the evidence specified in the request URL path.  You must maintain a copy of any evidence uploaded if you want to reference it later. Evidence cannot be downloaded after you upload it.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **disputeId** | **string**| The ID of the dispute that you want to retrieve evidence from. | 
+  **disputeId** | **string**| The ID of the dispute from which you want to retrieve evidence metadata. | 
   **evidenceId** | **string**| The ID of the evidence to retrieve. | 
 
 ### Return type
@@ -226,14 +234,14 @@ Name | Type | Description  | Notes
 > SubmitEvidenceResponse SubmitEvidence(ctx, disputeId)
 SubmitEvidence
 
-Submits evidence to the cardholder's bank.  Before submitting evidence, Square compiles all available evidence. This includes evidence uploaded using the [CreateDisputeEvidenceFile](/reference/square/disputes-api/create-dispute-evidence-file) and [CreateDisputeEvidenceText](/reference/square/disputes-api/create-dispute-evidence-text) endpoints and evidence automatically provided by Square, when available.
+Submits evidence to the cardholder's bank.  The evidence submitted by this endpoint includes evidence uploaded using the [CreateDisputeEvidenceFile](https://developer.squareup.com/reference/square_2024-07-17/disputes-api/create-dispute-evidence-file) and [CreateDisputeEvidenceText](https://developer.squareup.com/reference/square_2024-07-17/disputes-api/create-dispute-evidence-text) endpoints and evidence automatically provided by Square, when available. Evidence cannot be removed from a dispute after submission.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **disputeId** | **string**| The ID of the dispute that you want to submit evidence for. | 
+  **disputeId** | **string**| The ID of the dispute for which you want to submit evidence. | 
 
 ### Return type
 

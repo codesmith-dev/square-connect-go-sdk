@@ -9,14 +9,14 @@
  */
 package square
 
-// Only one of `order_entries` or `orders` fields will be set, depending on whether `return_entries` was set on the [SearchOrdersRequest](#type-searchorderrequest).
+// Either the `order_entries` or `orders` field is set, depending on whether `return_entries` is set on the [SearchOrdersRequest](https://developer.squareup.com/reference/square_2024-07-17/orders-api/search-orders).
 type SearchOrdersResponse struct {
-	// List of `OrderEntries` that fit the query conditions. Populated only if `return_entries` was set to `true` in the request.
+	// A list of [OrderEntries](https://developer.squareup.com/reference/square_2024-07-17/objects/OrderEntry) that fit the query conditions. The list is populated only if `return_entries` is set to `true` in the request.
 	OrderEntries []OrderEntry `json:"order_entries,omitempty"`
-	// List of `Order` objects that match query conditions. Populated only if `return_entries` in the request is set to `false`.
+	// A list of [Order](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) objects that match the query conditions. The list is populated only if `return_entries` is set to `false` in the request.
 	Orders []Order `json:"orders,omitempty"`
-	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
 	Cursor string `json:"cursor,omitempty"`
-	// `Errors` encountered during the search.
+	// [Errors](https://developer.squareup.com/reference/square_2024-07-17/objects/Error) encountered during the search.
 	Errors []ModelError `json:"errors,omitempty"`
 }

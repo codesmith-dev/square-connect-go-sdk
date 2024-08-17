@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**BatchRetrieveOrders**](OrdersApi.md#BatchRetrieveOrders) | **Post** /v2/orders/batch-retrieve | BatchRetrieveOrders
 [**CalculateOrder**](OrdersApi.md#CalculateOrder) | **Post** /v2/orders/calculate | CalculateOrder
+[**CloneOrder**](OrdersApi.md#CloneOrder) | **Post** /v2/orders/clone | CloneOrder
 [**CreateOrder**](OrdersApi.md#CreateOrder) | **Post** /v2/orders | CreateOrder
 [**PayOrder**](OrdersApi.md#PayOrder) | **Post** /v2/orders/{order_id}/pay | PayOrder
 [**RetrieveOrder**](OrdersApi.md#RetrieveOrder) | **Get** /v2/orders/{order_id} | RetrieveOrder
@@ -16,7 +17,7 @@ Method | HTTP request | Description
 > BatchRetrieveOrdersResponse BatchRetrieveOrders(ctx, body)
 BatchRetrieveOrders
 
-Retrieves a set of [Order](#type-order)s by their IDs.  If a given Order ID does not exist, the ID is ignored instead of generating an error.
+Retrieves a set of [orders](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) by their IDs.  If a given order ID does not exist, the ID is ignored instead of generating an error.
 
 ### Required Parameters
 
@@ -46,7 +47,7 @@ See the corresponding object definition for field details. |
 > CalculateOrderResponse CalculateOrder(ctx, body)
 CalculateOrder
 
-Calculates an [Order](#type-order).
+Enables applications to preview order pricing without creating an order.
 
 ### Required Parameters
 
@@ -72,11 +73,41 @@ See the corresponding object definition for field details. |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CloneOrder**
+> CloneOrderResponse CloneOrder(ctx, body)
+CloneOrder
+
+Creates a new order, in the `DRAFT` state, by duplicating an existing order. The newly created order has only the core fields (such as line items, taxes, and discounts) copied from the original order.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **body** | [**CloneOrderRequest**](CloneOrderRequest.md)| An object containing the fields to POST for the request.
+
+See the corresponding object definition for field details. | 
+
+### Return type
+
+[**CloneOrderResponse**](CloneOrderResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CreateOrder**
 > CreateOrderResponse CreateOrder(ctx, body)
 CreateOrder
 
-Creates a new [Order](#type-order) which can include information on products for purchase and settings to apply to the purchase.  To pay for a created order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.  You can modify open orders using the [UpdateOrder](#endpoint-orders-updateorder) endpoint.
+Creates a new [order](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) that can include information about products for purchase and settings to apply to the purchase.  To pay for a created order, see [Pay for Orders](https://developer.squareup.com/docs/orders-api/pay-for-orders).  You can modify open orders using the [UpdateOrder](https://developer.squareup.com/reference/square_2024-07-17/orders-api/update-order) endpoint.
 
 ### Required Parameters
 
@@ -106,7 +137,7 @@ See the corresponding object definition for field details. |
 > PayOrderResponse PayOrder(ctx, body, orderId)
 PayOrder
 
-Pay for an [order](#type-order) using one or more approved [payments](#type-payment), or settle an order with a total of `0`.  The total of the `payment_ids` listed in the request must be equal to the order total. Orders with a total amount of `0` can be marked as paid by specifying an empty array of `payment_ids` in the request.  To be used with PayOrder, a payment must:  - Reference the order by specifying the `order_id` when [creating the payment](#endpoint-payments-createpayment). Any approved payments that reference the same `order_id` not specified in the `payment_ids` will be canceled. - Be approved with [delayed capture](/payments-api/take-payments#delayed-capture). Using a delayed capture payment with PayOrder will complete the approved payment.
+Pay for an [order](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) using one or more approved [payments](https://developer.squareup.com/reference/square_2024-07-17/objects/Payment) or settle an order with a total of `0`.  The total of the `payment_ids` listed in the request must be equal to the order total. Orders with a total amount of `0` can be marked as paid by specifying an empty array of `payment_ids` in the request.  To be used with `PayOrder`, a payment must:  - Reference the order by specifying the `order_id` when [creating the payment](https://developer.squareup.com/reference/square_2024-07-17/payments-api/create-payment). Any approved payments that reference the same `order_id` not specified in the `payment_ids` is canceled. - Be approved with [delayed capture](https://developer.squareup.com/docs/payments-api/take-payments/card-payments/delayed-capture). Using a delayed capture payment with `PayOrder` completes the approved payment.
 
 ### Required Parameters
 
@@ -137,7 +168,7 @@ See the corresponding object definition for field details. |
 > RetrieveOrderResponse RetrieveOrder(ctx, orderId)
 RetrieveOrder
 
-Retrieves an [Order](#type-order) by ID.
+Retrieves an [Order](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) by ID.
 
 ### Required Parameters
 
@@ -165,7 +196,7 @@ Name | Type | Description  | Notes
 > SearchOrdersResponse SearchOrders(ctx, body)
 SearchOrders
 
-Search all orders for one or more locations. Orders include all sales, returns, and exchanges regardless of how or when they entered the Square Ecosystem (e.g. Point of Sale, Invoices, Connect APIs, etc).  SearchOrders requests need to specify which locations to search and define a [`SearchOrdersQuery`](#type-searchordersquery) object which controls how to sort or filter the results. Your SearchOrdersQuery can:    Set filter criteria.   Set sort order.   Determine whether to return results as complete Order objects, or as [OrderEntry](#type-orderentry) objects.  Note that details for orders processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline orders have a `created_at` value that reflects the time the order was created, not the time it was subsequently transmitted to Square.
+Search all orders for one or more locations. Orders include all sales, returns, and exchanges regardless of how or when they entered the Square ecosystem (such as Point of Sale, Invoices, and Connect APIs).  `SearchOrders` requests need to specify which locations to search and define a [SearchOrdersQuery](https://developer.squareup.com/reference/square_2024-07-17/objects/SearchOrdersQuery) object that controls how to sort or filter the results. Your `SearchOrdersQuery` can:    Set filter criteria.   Set the sort order.   Determine whether to return results as complete `Order` objects or as [OrderEntry](https://developer.squareup.com/reference/square_2024-07-17/objects/OrderEntry) objects.  Note that details for orders processed with Square Point of Sale while in offline mode might not be transmitted to Square for up to 72 hours. Offline orders have a `created_at` value that reflects the time the order was created, not the time it was subsequently transmitted to Square.
 
 ### Required Parameters
 
@@ -195,7 +226,7 @@ See the corresponding object definition for field details. |
 > UpdateOrderResponse UpdateOrder(ctx, body, orderId)
 UpdateOrder
 
-Updates an open [Order](#type-order) by adding, replacing, or deleting fields. Orders with a `COMPLETED` or `CANCELED` state cannot be updated.  An UpdateOrder request requires the following:  - The `order_id` in the endpoint path, identifying the order to update. - The latest `version` of the order to update. - The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to. - If deleting fields, the [dot notation paths](/orders-api/manage-orders#on-dot-notation) identifying fields to clear.  To pay for an order, please refer to the [Pay for Orders](/orders-api/pay-for-orders) guide.
+Updates an open [order](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) by adding, replacing, or deleting fields. Orders with a `COMPLETED` or `CANCELED` state cannot be updated.  An `UpdateOrder` request requires the following:  - The `order_id` in the endpoint path, identifying the order to update. - The latest `version` of the order to update. - The [sparse order](https://developer.squareup.com/docs/orders-api/manage-orders/update-orders#sparse-order-objects) containing only the fields to update and the version to which the update is being applied. - If deleting fields, the [dot notation paths](https://developer.squareup.com/docs/orders-api/manage-orders/update-orders#identifying-fields-to-delete) identifying the fields to clear.  To pay for an order, see [Pay for Orders](https://developer.squareup.com/docs/orders-api/pay-for-orders).
 
 ### Required Parameters
 

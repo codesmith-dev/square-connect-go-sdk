@@ -11,6 +11,6 @@ package square
 
 // Filter events by location.
 type LoyaltyEventLocationFilter struct {
-	// The `location` IDs for loyalty events to query. If multiple values are specified, the endpoint uses  a logical OR to combine them.
+	// The [location](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) IDs for loyalty events to query. If multiple values are specified, the endpoint uses  a logical OR to combine them.
 	LocationIds []string `json:"location_ids"`
 }

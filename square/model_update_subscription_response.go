@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that are included in the response from the [UpdateSubscription](#endpoint-subscriptions-updatesubscription) endpoint.
+// Defines output parameters in a response from the [UpdateSubscription](https://developer.squareup.com/reference/square_2024-07-17/subscriptions-api/update-subscription) endpoint.
 type UpdateSubscriptionResponse struct {
-	// Information about errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	// Errors encountered during the request.
+	Errors       []ModelError  `json:"errors,omitempty"`
 	Subscription *Subscription `json:"subscription,omitempty"`
 }

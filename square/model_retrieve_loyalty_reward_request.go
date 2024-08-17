@@ -10,5 +10,4 @@
 package square
 
 // A request to retrieve a loyalty reward.
-type RetrieveLoyaltyRewardRequest struct {
-}
+type RetrieveLoyaltyRewardRequest struct{}

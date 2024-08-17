@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the valid parameters for requests to __RetrieveCustomerSegmentRequest__.
-type RetrieveCustomerSegmentRequest struct {
-}
+// Defines the valid parameters for requests to the `RetrieveCustomerSegmentRequest` endpoint.
+type RetrieveCustomerSegmentRequest struct{}

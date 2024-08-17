@@ -14,6 +14,6 @@ type V1UpdateOrderRequestAction string
 // List of V1UpdateOrderRequestAction
 const (
 	COMPLETE_V1UpdateOrderRequestAction V1UpdateOrderRequestAction = "COMPLETE"
-	CANCEL_V1UpdateOrderRequestAction V1UpdateOrderRequestAction = "CANCEL"
-	REFUND_V1UpdateOrderRequestAction V1UpdateOrderRequestAction = "REFUND"
+	CANCEL_V1UpdateOrderRequestAction   V1UpdateOrderRequestAction = "CANCEL"
+	REFUND_V1UpdateOrderRequestAction   V1UpdateOrderRequestAction = "REFUND"
 )

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Action** | **string** | The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values | [default to null]
+**Action** | **string** | The action to perform on the order (COMPLETE, CANCEL, or REFUND). | [default to null]
 **ShippedTrackingNumber** | **string** | The tracking number of the shipment associated with the order. Only valid if action is COMPLETE. | [optional] [default to null]
 **CompletedNote** | **string** | A merchant-specified note about the completion of the order. Only valid if action is COMPLETE. | [optional] [default to null]
 **RefundedNote** | **string** | A merchant-specified note about the refunding of the order. Only valid if action is REFUND. | [optional] [default to null]

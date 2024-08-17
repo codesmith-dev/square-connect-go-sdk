@@ -9,5 +9,4 @@
  */
 package square
 
-type RetrieveInventoryPhysicalCountRequest struct {
-}
+type RetrieveInventoryPhysicalCountRequest struct{}

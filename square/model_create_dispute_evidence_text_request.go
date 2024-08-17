@@ -11,9 +11,9 @@ package square
 
 // Defines the parameters for a `CreateDisputeEvidenceText` request.
 type CreateDisputeEvidenceTextRequest struct {
-	// The Unique ID. For more information, see [Idempotency](https://developer.squareup.com/docs/docs/working-with-apis/idempotency).
+	// A unique key identifying the request. For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency).
 	IdempotencyKey string `json:"idempotency_key"`
-	// The type of evidence you are uploading. See [DisputeEvidenceType](#type-disputeevidencetype) for possible values
+	// The type of evidence you are uploading.
 	EvidenceType string `json:"evidence_type,omitempty"`
 	// The evidence string.
 	EvidenceText string `json:"evidence_text"`

@@ -9,18 +9,21 @@
  */
 package square
 
+// A seller's business booking profile, including booking policy, appointment settings, etc.
 type BusinessBookingProfile struct {
 	// The ID of the seller, obtainable using the Merchants API.
 	SellerId string `json:"seller_id,omitempty"`
-	// The RFC-3339 timestamp specifying the booking's creation time.
+	// The RFC 3339 timestamp specifying the booking's creation time.
 	CreatedAt string `json:"created_at,omitempty"`
 	// Indicates whether the seller is open for booking.
 	BookingEnabled bool `json:"booking_enabled,omitempty"`
-	// The choice of customer's time zone information of a booking. The Square online booking site and all notifications to customers uses either the seller location’s time zone or the time zone the customer chooses at booking. See [BusinessBookingProfileCustomerTimezoneChoice](#type-businessbookingprofilecustomertimezonechoice) for possible values
+	// The choice of customer's time zone information of a booking. The Square online booking site and all notifications to customers uses either the seller location’s time zone or the time zone the customer chooses at booking.
 	CustomerTimezoneChoice string `json:"customer_timezone_choice,omitempty"`
-	// The policy for the seller to automatically accept booking requests (`ACCEPT_ALL`) or not (`REQUIRES_ACCEPTANCE`). See [BusinessBookingProfileBookingPolicy](#type-businessbookingprofilebookingpolicy) for possible values
+	// The policy for the seller to automatically accept booking requests (`ACCEPT_ALL`) or not (`REQUIRES_ACCEPTANCE`).
 	BookingPolicy string `json:"booking_policy,omitempty"`
 	// Indicates whether customers can cancel or reschedule their own bookings (`true`) or not (`false`).
-	AllowUserCancel bool `json:"allow_user_cancel,omitempty"`
+	AllowUserCancel             bool                         `json:"allow_user_cancel,omitempty"`
 	BusinessAppointmentSettings *BusinessAppointmentSettings `json:"business_appointment_settings,omitempty"`
+	// Indicates whether the seller's subscription to Square Appointments supports creating, updating or canceling an appointment through the API (`true`) or not (`false`) using seller permission.
+	SupportSellerLevelWrites bool `json:"support_seller_level_writes,omitempty"`
 }

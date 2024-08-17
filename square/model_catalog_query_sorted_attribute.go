@@ -15,6 +15,6 @@ type CatalogQuerySortedAttribute struct {
 	AttributeName string `json:"attribute_name"`
 	// The first attribute value to be returned by the query. Ascending sorts will return only objects with this value or greater, while descending sorts will return only objects with this value or less. If unset, start at the beginning (for ascending sorts) or end (for descending sorts).
 	InitialAttributeValue string `json:"initial_attribute_value,omitempty"`
-	// The desired sort order, `\"ASC\"` (ascending) or `\"DESC\"` (descending). See [SortOrder](#type-sortorder) for possible values
+	// The desired sort order, `\"ASC\"` (ascending) or `\"DESC\"` (descending).
 	SortOrder string `json:"sort_order,omitempty"`
 }

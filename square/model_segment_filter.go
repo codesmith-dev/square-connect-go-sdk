@@ -9,9 +9,9 @@
  */
 package square
 
-// A query filter to search for appointment segments by.
+// A query filter to search for buyer-accessible appointment segments by.
 type SegmentFilter struct {
-	// The ID of the `CatalogItemVariation` representing the service booked in this segment.
-	ServiceVariationId string `json:"service_variation_id"`
+	// The ID of the [CatalogItemVariation](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogItemVariation) object representing the service booked in this segment.
+	ServiceVariationId string       `json:"service_variation_id"`
 	TeamMemberIdFilter *FilterValue `json:"team_member_id_filter,omitempty"`
 }

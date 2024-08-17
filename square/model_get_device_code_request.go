@@ -9,5 +9,4 @@
  */
 package square
 
-type GetDeviceCodeRequest struct {
-}
+type GetDeviceCodeRequest struct{}

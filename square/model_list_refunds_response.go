@@ -9,12 +9,12 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the [ListRefunds](#endpoint-listrefunds) endpoint.  One of `errors` or `refunds` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [ListRefunds](https://developer.squareup.com/reference/square_2024-07-17/transactions-api/list-refunds) endpoint.  One of `errors` or `refunds` is present in a given response (never both).
 type ListRefundsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 	// An array of refunds that match your query.
 	Refunds []Refund `json:"refunds,omitempty"`
-	// A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the `cursor` parameter in a subsequent request to this endpoint.  See [Paginating results](#paginatingresults) for more information.
+	// A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the `cursor` parameter in a subsequent request to this endpoint.  See [Paginating results](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`
 }

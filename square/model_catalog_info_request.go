@@ -9,5 +9,4 @@
  */
 package square
 
-type CatalogInfoRequest struct {
-}
+type CatalogInfoRequest struct{}

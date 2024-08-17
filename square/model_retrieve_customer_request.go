@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the fields that are included in requests to the RetrieveCustomer endpoint.
-type RetrieveCustomerRequest struct {
-}
+// Defines the fields that are included in requests to the `RetrieveCustomer` endpoint.
+type RetrieveCustomerRequest struct{}

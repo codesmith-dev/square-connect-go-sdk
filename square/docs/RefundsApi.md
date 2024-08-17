@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 > ListPaymentRefundsResponse ListPaymentRefunds(ctx, optional)
 ListPaymentRefunds
 
-Retrieves a list of refunds for the account making the request.  The maximum results per page is 100.
+Retrieves a list of refunds for the account making the request.  Results are eventually consistent, and new refunds or changes to refunds might take several seconds to appear.  The maximum results per page is 100.
 
 ### Required Parameters
 
@@ -53,13 +53,13 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a RefundsApiListPaymentRefundsOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **beginTime** | **optional.String**| The timestamp for the beginning of the requested reporting period, in RFC 3339 format.  Default: The current time minus one year. | 
- **endTime** | **optional.String**| The timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time. | 
- **sortOrder** | **optional.String**| The order in which results are listed: - &#x60;ASC&#x60; - Oldest to newest. - &#x60;DESC&#x60; - Newest to oldest (default). | 
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination). | 
+ **beginTime** | **optional.String**| Indicates the start of the time range to retrieve each &#x60;PaymentRefund&#x60; for, in RFC 3339  format.  The range is determined using the &#x60;created_at&#x60; field for each &#x60;PaymentRefund&#x60;.   Default: The current time minus one year. | 
+ **endTime** | **optional.String**| Indicates the end of the time range to retrieve each &#x60;PaymentRefund&#x60; for, in RFC 3339  format.  The range is determined using the &#x60;created_at&#x60; field for each &#x60;PaymentRefund&#x60;.  Default: The current time. | 
+ **sortOrder** | **optional.String**| The order in which results are listed by &#x60;PaymentRefund.created_at&#x60;: - &#x60;ASC&#x60; - Oldest to newest. - &#x60;DESC&#x60; - Newest to oldest (default). | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination). | 
  **locationId** | **optional.String**| Limit results to the location supplied. By default, results are returned for all locations associated with the seller. | 
- **status** | **optional.String**| If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted, refunds are returned regardless of their status. | 
- **sourceType** | **optional.String**| If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where &#x60;CARD&#x60; was specified as the payment source.  Default: If omitted, refunds are returned regardless of the source type. | 
+ **status** | **optional.String**| If provided, only refunds with the given status are returned. For a list of refund status values, see [PaymentRefund](https://developer.squareup.com/reference/square_2024-07-17/objects/PaymentRefund).  Default: If omitted, refunds are returned regardless of their status. | 
+ **sourceType** | **optional.String**| If provided, only returns refunds whose payments have the indicated source type. Current values include &#x60;CARD&#x60;, &#x60;BANK_ACCOUNT&#x60;, &#x60;WALLET&#x60;, &#x60;CASH&#x60;, and &#x60;EXTERNAL&#x60;. For information about these payment source types, see [Take Payments](https://developer.squareup.com/docs/payments-api/take-payments).  Default: If omitted, refunds are returned regardless of the source type. | 
  **limit** | **optional.Int32**| The maximum number of results to be returned in a single page.  It is possible to receive fewer results than the specified limit on a given page.  If the supplied value is greater than 100, no more than 100 results are returned.  Default: 100 | 
 
 ### Return type
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 > RefundPaymentResponse RefundPayment(ctx, body)
 RefundPayment
 
-Refunds a payment. You can refund the entire payment amount or a  portion of it.
+Refunds a payment. You can refund the entire payment amount or a portion of it. You can use this endpoint to refund a card payment or record a  refund of a cash or external payment. For more information, see [Refund Payment](https://developer.squareup.com/docs/payments-api/refund-payments).
 
 ### Required Parameters
 

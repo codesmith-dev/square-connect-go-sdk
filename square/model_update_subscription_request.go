@@ -9,7 +9,7 @@
  */
 package square
 
-// Defines parameters in a [UpdateSubscription](#endpoint-subscriptions-updatesubscription) endpoint  request.
+// Defines input parameters in a request to the  [UpdateSubscription](https://developer.squareup.com/reference/square_2024-07-17/subscriptions-api/update-subscription) endpoint.
 type UpdateSubscriptionRequest struct {
 	Subscription *Subscription `json:"subscription,omitempty"`
 }

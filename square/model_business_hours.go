@@ -9,8 +9,8 @@
  */
 package square
 
-// Represents the hours of operation for a business location.
+// The hours of operation for a location.
 type BusinessHours struct {
-	// The list of time periods during which the business is open. There may be at most 10 periods per day.
+	// The list of time periods during which the business is open. There can be at most 10 periods per day.
 	Periods []BusinessHoursPeriod `json:"periods,omitempty"`
 }

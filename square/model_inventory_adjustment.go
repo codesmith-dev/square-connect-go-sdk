@@ -15,32 +15,35 @@ type InventoryAdjustment struct {
 	Id string `json:"id,omitempty"`
 	// An optional ID provided by the application to tie the `InventoryAdjustment` to an external system.
 	ReferenceId string `json:"reference_id,omitempty"`
-	// The `InventoryState` of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
+	// The [inventory state](https://developer.squareup.com/reference/square_2024-07-17/enums/InventoryState) of the related quantity of items before the adjustment.
 	FromState string `json:"from_state,omitempty"`
-	// The `InventoryState` of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
+	// The [inventory state](https://developer.squareup.com/reference/square_2024-07-17/enums/InventoryState) of the related quantity of items after the adjustment.
 	ToState string `json:"to_state,omitempty"`
-	// The Square ID of the `Location` where the related quantity of items are being tracked.
+	// The Square-generated ID of the [Location](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) where the related quantity of items is being tracked.
 	LocationId string `json:"location_id,omitempty"`
-	// The Square generated ID of the `CatalogObject` being tracked.
+	// The Square-generated ID of the [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The `CatalogObjectType` of the `CatalogObject` being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](https://developer.squareup.com/reference/square_2024-07-17/enums/CatalogObjectType) of the [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) being tracked.   The Inventory API supports setting and reading the `\"catalog_object_type\": \"ITEM_VARIATION\"` field value.  In addition, it can also read the `\"catalog_object_type\": \"ITEM\"` field value that is set by the Square Restaurants app.
 	CatalogObjectType string `json:"catalog_object_type,omitempty"`
 	// The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.
-	Quantity string `json:"quantity,omitempty"`
+	Quantity        string `json:"quantity,omitempty"`
 	TotalPriceMoney *Money `json:"total_price_money,omitempty"`
-	// A client-generated timestamp in RFC 3339 format that indicates when the adjustment took place. For write actions, the `occurred_at` timestamp cannot be older than 24 hours or in the future relative to the time of the request.
+	// A client-generated RFC 3339-formatted timestamp that indicates when the inventory adjustment took place. For inventory adjustment updates, the `occurred_at` timestamp cannot be older than 24 hours or in the future relative to the time of the request.
 	OccurredAt string `json:"occurred_at,omitempty"`
-	// A read-only timestamp in RFC 3339 format that indicates when Square received the adjustment.
-	CreatedAt string `json:"created_at,omitempty"`
-	Source *SourceApplication `json:"source,omitempty"`
-	// The Square ID of the `Employee` responsible for the inventory adjustment.
+	// An RFC 3339-formatted timestamp that indicates when the inventory adjustment is received.
+	CreatedAt string             `json:"created_at,omitempty"`
+	Source    *SourceApplication `json:"source,omitempty"`
+	// The Square-generated ID of the [Employee](https://developer.squareup.com/reference/square_2024-07-17/objects/Employee) responsible for the inventory adjustment.
 	EmployeeId string `json:"employee_id,omitempty"`
-	// The read-only Square ID of the [Transaction][#type-transaction] that caused the adjustment. Only relevant for payment-related state transitions.
+	// The Square-generated ID of the [Team Member](https://developer.squareup.com/reference/square_2024-07-17/objects/TeamMember) responsible for the inventory adjustment.
+	TeamMemberId string `json:"team_member_id,omitempty"`
+	// The Square-generated ID of the [Transaction](https://developer.squareup.com/reference/square_2024-07-17/objects/Transaction) that caused the adjustment. Only relevant for payment-related state transitions.
 	TransactionId string `json:"transaction_id,omitempty"`
-	// The read-only Square ID of the [Refund][#type-refund] that caused the adjustment. Only relevant for refund-related state transitions.
+	// The Square-generated ID of the [Refund](https://developer.squareup.com/reference/square_2024-07-17/objects/Refund) that caused the adjustment. Only relevant for refund-related state transitions.
 	RefundId string `json:"refund_id,omitempty"`
-	// The read-only Square ID of the purchase order that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
+	// The Square-generated ID of the purchase order that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
 	PurchaseOrderId string `json:"purchase_order_id,omitempty"`
-	// The read-only Square ID of the Square goods receipt that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
-	GoodsReceiptId string `json:"goods_receipt_id,omitempty"`
+	// The Square-generated ID of the goods receipt that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
+	GoodsReceiptId  string                    `json:"goods_receipt_id,omitempty"`
+	AdjustmentGroup *InventoryAdjustmentGroup `json:"adjustment_group,omitempty"`
 }

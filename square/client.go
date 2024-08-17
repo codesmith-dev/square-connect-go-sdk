@@ -49,13 +49,19 @@ type APIClient struct {
 
 	BankAccountsApi *BankAccountsApiService
 
+	BookingCustomAttributesApi *BookingCustomAttributesApiService
+
 	BookingsApi *BookingsApiService
+
+	CardsApi *CardsApiService
 
 	CashDrawersApi *CashDrawersApiService
 
 	CatalogApi *CatalogApiService
 
 	CheckoutApi *CheckoutApiService
+
+	CustomerCustomAttributesApi *CustomerCustomAttributesApiService
 
 	CustomerGroupsApi *CustomerGroupsApiService
 
@@ -69,15 +75,25 @@ type APIClient struct {
 
 	EmployeesApi *EmployeesApiService
 
+	EventsApi *EventsApiService
+
+	GiftCardActivitiesApi *GiftCardActivitiesApiService
+
+	GiftCardsApi *GiftCardsApiService
+
 	InventoryApi *InventoryApiService
 
 	InvoicesApi *InvoicesApiService
 
 	LaborApi *LaborApiService
 
+	LocationCustomAttributesApi *LocationCustomAttributesApiService
+
 	LocationsApi *LocationsApiService
 
 	LoyaltyApi *LoyaltyApiService
+
+	MerchantCustomAttributesApi *MerchantCustomAttributesApiService
 
 	MerchantsApi *MerchantsApiService
 
@@ -85,11 +101,19 @@ type APIClient struct {
 
 	OAuthApi *OAuthApiService
 
+	OrderCustomAttributesApi *OrderCustomAttributesApiService
+
 	OrdersApi *OrdersApiService
 
 	PaymentsApi *PaymentsApiService
 
+	PayoutsApi *PayoutsApiService
+
 	RefundsApi *RefundsApiService
+
+	SitesApi *SitesApiService
+
+	SnippetsApi *SnippetsApiService
 
 	SubscriptionsApi *SubscriptionsApiService
 
@@ -99,11 +123,11 @@ type APIClient struct {
 
 	TransactionsApi *TransactionsApiService
 
-	V1EmployeesApi *V1EmployeesApiService
-
-	V1ItemsApi *V1ItemsApiService
-
 	V1TransactionsApi *V1TransactionsApiService
+
+	VendorsApi *VendorsApiService
+
+	WebhookSubscriptionsApi *WebhookSubscriptionsApiService
 }
 
 type service struct {
@@ -124,34 +148,46 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.ApplePayApi = (*ApplePayApiService)(&c.common)
 	c.BankAccountsApi = (*BankAccountsApiService)(&c.common)
+	c.BookingCustomAttributesApi = (*BookingCustomAttributesApiService)(&c.common)
 	c.BookingsApi = (*BookingsApiService)(&c.common)
+	c.CardsApi = (*CardsApiService)(&c.common)
 	c.CashDrawersApi = (*CashDrawersApiService)(&c.common)
 	c.CatalogApi = (*CatalogApiService)(&c.common)
 	c.CheckoutApi = (*CheckoutApiService)(&c.common)
+	c.CustomerCustomAttributesApi = (*CustomerCustomAttributesApiService)(&c.common)
 	c.CustomerGroupsApi = (*CustomerGroupsApiService)(&c.common)
 	c.CustomerSegmentsApi = (*CustomerSegmentsApiService)(&c.common)
 	c.CustomersApi = (*CustomersApiService)(&c.common)
 	c.DevicesApi = (*DevicesApiService)(&c.common)
 	c.DisputesApi = (*DisputesApiService)(&c.common)
 	c.EmployeesApi = (*EmployeesApiService)(&c.common)
+	c.EventsApi = (*EventsApiService)(&c.common)
+	c.GiftCardActivitiesApi = (*GiftCardActivitiesApiService)(&c.common)
+	c.GiftCardsApi = (*GiftCardsApiService)(&c.common)
 	c.InventoryApi = (*InventoryApiService)(&c.common)
 	c.InvoicesApi = (*InvoicesApiService)(&c.common)
 	c.LaborApi = (*LaborApiService)(&c.common)
+	c.LocationCustomAttributesApi = (*LocationCustomAttributesApiService)(&c.common)
 	c.LocationsApi = (*LocationsApiService)(&c.common)
 	c.LoyaltyApi = (*LoyaltyApiService)(&c.common)
+	c.MerchantCustomAttributesApi = (*MerchantCustomAttributesApiService)(&c.common)
 	c.MerchantsApi = (*MerchantsApiService)(&c.common)
 	c.MobileAuthorizationApi = (*MobileAuthorizationApiService)(&c.common)
 	c.OAuthApi = (*OAuthApiService)(&c.common)
+	c.OrderCustomAttributesApi = (*OrderCustomAttributesApiService)(&c.common)
 	c.OrdersApi = (*OrdersApiService)(&c.common)
 	c.PaymentsApi = (*PaymentsApiService)(&c.common)
+	c.PayoutsApi = (*PayoutsApiService)(&c.common)
 	c.RefundsApi = (*RefundsApiService)(&c.common)
+	c.SitesApi = (*SitesApiService)(&c.common)
+	c.SnippetsApi = (*SnippetsApiService)(&c.common)
 	c.SubscriptionsApi = (*SubscriptionsApiService)(&c.common)
 	c.TeamApi = (*TeamApiService)(&c.common)
 	c.TerminalApi = (*TerminalApiService)(&c.common)
 	c.TransactionsApi = (*TransactionsApiService)(&c.common)
-	c.V1EmployeesApi = (*V1EmployeesApiService)(&c.common)
-	c.V1ItemsApi = (*V1ItemsApiService)(&c.common)
 	c.V1TransactionsApi = (*V1TransactionsApiService)(&c.common)
+	c.VendorsApi = (*VendorsApiService)(&c.common)
+	c.WebhookSubscriptionsApi = (*WebhookSubscriptionsApiService)(&c.common)
 
 	return c
 }
@@ -249,8 +285,8 @@ func (c *APIClient) prepareRequest(
 	queryParams url.Values,
 	formParams url.Values,
 	fileName string,
-	fileBytes []byte) (localVarRequest *http.Request, err error) {
-
+	fileBytes []byte,
+) (localVarRequest *http.Request, err error) {
 	var body *bytes.Buffer
 
 	// Detect postBody type and post.
@@ -397,17 +433,17 @@ func (c *APIClient) prepareRequest(
 }
 
 func (c *APIClient) decode(v interface{}, b []byte, contentType string) (err error) {
-		if strings.Contains(contentType, "application/xml") {
-			if err = xml.Unmarshal(b, v); err != nil {
-				return err
-			}
-			return nil
-		} else if strings.Contains(contentType, "application/json") {
-			if err = json.Unmarshal(b, v); err != nil {
-				return err
-			}
-			return nil
+	if strings.Contains(contentType, "application/xml") {
+		if err = xml.Unmarshal(b, v); err != nil {
+			return err
 		}
+		return nil
+	} else if strings.Contains(contentType, "application/json") {
+		if err = json.Unmarshal(b, v); err != nil {
+			return err
+		}
+		return nil
+	}
 	return errors.New("undefined response type")
 }
 

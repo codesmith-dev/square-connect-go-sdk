@@ -9,5 +9,4 @@
  */
 package square
 
-type RetrieveEmployeeRequest struct {
-}
+type RetrieveEmployeeRequest struct{}

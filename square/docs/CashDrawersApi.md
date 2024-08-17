@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 > RetrieveCashDrawerShiftResponse RetrieveCashDrawerShift(ctx, locationId, shiftId)
 RetrieveCashDrawerShift
 
-Provides the summary details for a single cash drawer shift. See [ListCashDrawerShiftEvents](#endpoint-CashDrawers-ListCashDrawerShiftEvents) for a list of cash drawer shift events.
+Provides the summary details for a single cash drawer shift. See [ListCashDrawerShiftEvents](https://developer.squareup.com/reference/square_2024-07-17/cash-drawers-api/list-cash-drawer-shift-events) for a list of cash drawer shift events.
 
 ### Required Parameters
 

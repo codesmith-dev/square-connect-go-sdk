@@ -9,7 +9,7 @@
  */
 package square
 
-// The response object returned by the [ListMerchant](#endpoint-listmerchant) endpoint.
+// The response object returned by the [ListMerchant](https://developer.squareup.com/reference/square_2024-07-17/merchants-api/list-merchants) endpoint.
 type ListMerchantsResponse struct {
 	// Information on errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`

@@ -9,15 +9,16 @@
  */
 package square
 
-// Describes a phase in a subscription plan. For more information, see [Set Up and Manage a Subscription Plan](/docs/subscriptions-api/setup-plan).
+// Describes a phase in a subscription plan variation. For more information, see [Subscription Plans and Variations](https://developer.squareup.com/docs/subscriptions-api/plans-and-variations).
 type SubscriptionPhase struct {
 	// The Square-assigned ID of the subscription phase. This field cannot be changed after a `SubscriptionPhase` is created.
 	Uid string `json:"uid,omitempty"`
-	// The billing cadence of the phase. For example, weekly or monthly. This field cannot be changed after a `SubscriptionPhase` is created. See [SubscriptionCadence](#type-subscriptioncadence) for possible values
+	// The billing cadence of the phase. For example, weekly or monthly. This field cannot be changed after a `SubscriptionPhase` is created.
 	Cadence string `json:"cadence"`
 	// The number of `cadence`s the phase lasts. If not set, the phase never ends. Only the last phase can be indefinite. This field cannot be changed after a `SubscriptionPhase` is created.
-	Periods int32 `json:"periods,omitempty"`
-	RecurringPriceMoney *Money `json:"recurring_price_money"`
+	Periods             int32  `json:"periods,omitempty"`
+	RecurringPriceMoney *Money `json:"recurring_price_money,omitempty"`
 	// The position this phase appears in the sequence of phases defined for the plan, indexed from 0. This field cannot be changed after a `SubscriptionPhase` is created.
-	Ordinal int64 `json:"ordinal,omitempty"`
+	Ordinal int64                `json:"ordinal,omitempty"`
+	Pricing *SubscriptionPricing `json:"pricing,omitempty"`
 }

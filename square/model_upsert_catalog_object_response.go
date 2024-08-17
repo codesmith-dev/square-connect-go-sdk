@@ -11,7 +11,7 @@ package square
 
 type UpsertCatalogObjectResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	Errors        []ModelError   `json:"errors,omitempty"`
 	CatalogObject *CatalogObject `json:"catalog_object,omitempty"`
 	// The mapping between client and server IDs for this upsert.
 	IdMappings []CatalogIdMapping `json:"id_mappings,omitempty"`

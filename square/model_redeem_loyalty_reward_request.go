@@ -13,6 +13,6 @@ package square
 type RedeemLoyaltyRewardRequest struct {
 	// A unique string that identifies this `RedeemLoyaltyReward` request.  Keys can be any valid string, but must be unique for every request.
 	IdempotencyKey string `json:"idempotency_key"`
-	// The ID of the `location` where the reward is redeemed.
+	// The ID of the [location](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) where the reward is redeemed.
 	LocationId string `json:"location_id"`
 }

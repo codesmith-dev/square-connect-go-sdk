@@ -9,10 +9,10 @@
  */
 package square
 
-// Filter based on [Order Fulfillment](#type-orderfulfillment) information.
+// Filter based on [order fulfillment](https://developer.squareup.com/reference/square_2024-07-17/objects/Fulfillment) information.
 type SearchOrdersFulfillmentFilter struct {
-	// List of `fulfillment types` to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
+	// A list of [fulfillment types](https://developer.squareup.com/reference/square_2024-07-17/enums/FulfillmentType) to filter for. The list returns orders if any of its fulfillments match any of the fulfillment types listed in this field.
 	FulfillmentTypes []string `json:"fulfillment_types,omitempty"`
-	// List of `fulfillment states` to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+	// A list of [fulfillment states](https://developer.squareup.com/reference/square_2024-07-17/enums/FulfillmentState) to filter for. The list returns orders if any of its fulfillments match any of the fulfillment states listed in this field.
 	FulfillmentStates []string `json:"fulfillment_states,omitempty"`
 }

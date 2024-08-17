@@ -10,7 +10,7 @@
 package square
 
 type CreateTerminalRefundRequest struct {
-	// A unique string that identifies this `CreateRefund` request. Keys can be any valid string but must be unique for every `CreateRefund` request.  See [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
-	IdempotencyKey string `json:"idempotency_key"`
-	Refund *TerminalRefund `json:"refund,omitempty"`
+	// A unique string that identifies this `CreateRefund` request. Keys can be any valid string but must be unique for every `CreateRefund` request.  See [Idempotency keys](https://developer.squareup.com/docs/build-basics/common-api-patterns/idempotency) for more information.
+	IdempotencyKey string          `json:"idempotency_key"`
+	Refund         *TerminalRefund `json:"refund,omitempty"`
 }

@@ -13,7 +13,7 @@ package square
 type CashDrawerShiftSummary struct {
 	// The shift unique ID.
 	Id string `json:"id,omitempty"`
-	// The shift current state. See [CashDrawerShiftState](#type-cashdrawershiftstate) for possible values
+	// The shift current state.
 	State string `json:"state,omitempty"`
 	// The shift start time in ISO 8601 format.
 	OpenedAt string `json:"opened_at,omitempty"`
@@ -22,8 +22,14 @@ type CashDrawerShiftSummary struct {
 	// The shift close time in ISO 8601 format.
 	ClosedAt string `json:"closed_at,omitempty"`
 	// An employee free-text description of a cash drawer shift.
-	Description string `json:"description,omitempty"`
-	OpenedCashMoney *Money `json:"opened_cash_money,omitempty"`
+	Description       string `json:"description,omitempty"`
+	OpenedCashMoney   *Money `json:"opened_cash_money,omitempty"`
 	ExpectedCashMoney *Money `json:"expected_cash_money,omitempty"`
-	ClosedCashMoney *Money `json:"closed_cash_money,omitempty"`
+	ClosedCashMoney   *Money `json:"closed_cash_money,omitempty"`
+	// The shift start time in RFC 3339 format.
+	CreatedAt string `json:"created_at,omitempty"`
+	// The shift updated at time in RFC 3339 format.
+	UpdatedAt string `json:"updated_at,omitempty"`
+	// The ID of the location the cash drawer shift belongs to.
+	LocationId string `json:"location_id,omitempty"`
 }

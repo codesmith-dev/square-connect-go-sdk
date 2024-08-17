@@ -21,13 +21,13 @@ type V1Order struct {
 	RecipientName string `json:"recipient_name,omitempty"`
 	// The phone number to use for the order's delivery.
 	RecipientPhoneNumber string `json:"recipient_phone_number,omitempty"`
-	// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values
-	State string `json:"state,omitempty"`
-	ShippingAddress *Address `json:"shipping_address,omitempty"`
-	SubtotalMoney *V1Money `json:"subtotal_money,omitempty"`
+	// Whether the tax is an ADDITIVE tax or an INCLUSIVE tax.
+	State              string   `json:"state,omitempty"`
+	ShippingAddress    *Address `json:"shipping_address,omitempty"`
+	SubtotalMoney      *V1Money `json:"subtotal_money,omitempty"`
 	TotalShippingMoney *V1Money `json:"total_shipping_money,omitempty"`
-	TotalTaxMoney *V1Money `json:"total_tax_money,omitempty"`
-	TotalPriceMoney *V1Money `json:"total_price_money,omitempty"`
+	TotalTaxMoney      *V1Money `json:"total_tax_money,omitempty"`
+	TotalPriceMoney    *V1Money `json:"total_price_money,omitempty"`
 	TotalDiscountMoney *V1Money `json:"total_discount_money,omitempty"`
 	// The time when the order was created, in ISO 8601 format.
 	CreatedAt string `json:"created_at,omitempty"`
@@ -44,8 +44,8 @@ type V1Order struct {
 	// A note provided by the merchant when the order's state was set to REFUNDED, if any.
 	RefundedNote string `json:"refunded_note,omitempty"`
 	// A note provided by the merchant when the order's state was set to CANCELED, if any.
-	CanceledNote string `json:"canceled_note,omitempty"`
-	Tender *V1Tender `json:"tender,omitempty"`
+	CanceledNote string    `json:"canceled_note,omitempty"`
+	Tender       *V1Tender `json:"tender,omitempty"`
 	// The history of actions associated with the order.
 	OrderHistory []V1OrderHistoryEntry `json:"order_history,omitempty"`
 	// The promo code provided by the buyer, if any.

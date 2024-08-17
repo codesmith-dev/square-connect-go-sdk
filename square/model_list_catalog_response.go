@@ -12,7 +12,7 @@ package square
 type ListCatalogResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`
 	// The CatalogObjects returned.
 	Objects []CatalogObject `json:"objects,omitempty"`

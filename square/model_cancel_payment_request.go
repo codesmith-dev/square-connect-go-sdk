@@ -9,6 +9,5 @@
  */
 package square
 
-// Cancels (voids) a payment before it has been completed. Note: Only payments created with `autocomplete` set to `false` can be canceled.
-type CancelPaymentRequest struct {
-}
+// Describes the request to cancel (void) a payment using [CancelPayment](https://developer.squareup.com/reference/square_2024-07-17/payments-api/cancel-payment). You can only cancel a payment that is approved (not completed). For more information, see [Delayed capture of a payment](https://developer.squareup.com/docs/payments-api/take-payments/card-payments#delayed-capture-of-a-card-payment).
+type CancelPaymentRequest struct{}

@@ -13,6 +13,6 @@ package square
 type RiskEvaluation struct {
 	// The timestamp when payment risk was evaluated, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
-	// The risk level associated with the payment See [RiskEvaluationRiskLevel](#type-riskevaluationrisklevel) for possible values
+	// The risk level associated with the payment
 	RiskLevel string `json:"risk_level,omitempty"`
 }

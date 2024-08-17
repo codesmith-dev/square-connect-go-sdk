@@ -18,11 +18,11 @@ type DeviceCode struct {
 	Code string `json:"code,omitempty"`
 	// The unique id of the device that used this code. Populated when the device is paired up.
 	DeviceId string `json:"device_id,omitempty"`
-	// The targeting product type of the device code. See [ProductType](#type-producttype) for possible values
+	// The targeting product type of the device code.
 	ProductType string `json:"product_type"`
 	// The location assigned to this code.
 	LocationId string `json:"location_id,omitempty"`
-	// The pairing status of the device code. See [DeviceCodeStatus](#type-devicecodestatus) for possible values
+	// The pairing status of the device code.
 	Status string `json:"status,omitempty"`
 	// When this DeviceCode will expire and no longer login. Timestamp in RFC 3339 format.
 	PairBy string `json:"pair_by,omitempty"`

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **BuyerEmail** | **string** | The email address of the order&#x27;s buyer. | [optional] [default to null]
 **RecipientName** | **string** | The name of the order&#x27;s buyer. | [optional] [default to null]
 **RecipientPhoneNumber** | **string** | The phone number to use for the order&#x27;s delivery. | [optional] [default to null]
-**State** | **string** | Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values | [optional] [default to null]
+**State** | **string** | Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. | [optional] [default to null]
 **ShippingAddress** | [***Address**](Address.md) |  | [optional] [default to null]
 **SubtotalMoney** | [***V1Money**](V1Money.md) |  | [optional] [default to null]
 **TotalShippingMoney** | [***V1Money**](V1Money.md) |  | [optional] [default to null]

@@ -9,5 +9,4 @@
  */
 package square
 
-type VoidTransactionRequest struct {
-}
+type VoidTransactionRequest struct{}

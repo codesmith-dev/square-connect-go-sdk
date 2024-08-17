@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields included in the response body for requests to __RetrieveCustomerSegment__.  One of `errors` or `segment` is present in a given response (never both).
+// Defines the fields that are included in the response body for requests to the `RetrieveCustomerSegment` endpoint.  Either `errors` or `segment` is present in a given response (never both).
 type RetrieveCustomerSegmentResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	Errors  []ModelError     `json:"errors,omitempty"`
 	Segment *CustomerSegment `json:"segment,omitempty"`
 }

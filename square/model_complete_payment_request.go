@@ -9,6 +9,8 @@
  */
 package square
 
-// Completes (captures) a payment.  By default, payments are set to `autocomplete` immediately after they are created. To complete payments manually, set `autocomplete` to `false`.
+// Describes a request to complete (capture) a payment using  [CompletePayment](https://developer.squareup.com/reference/square_2024-07-17/payments-api/complete-payment).  By default, payments are set to `autocomplete` immediately after they are created. To complete payments manually, set `autocomplete` to `false`.
 type CompletePaymentRequest struct {
+	// Used for optimistic concurrency. This opaque token identifies the current `Payment`  version that the caller expects. If the server has a different version of the Payment,  the update fails and a response with a VERSION_MISMATCH error is returned.
+	VersionToken string `json:"version_token,omitempty"`
 }

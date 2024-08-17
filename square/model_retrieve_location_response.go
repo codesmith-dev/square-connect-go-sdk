@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that the [RetrieveLocation](#endpoint-retrievelocation) endpoint returns in a response.
+// Defines the fields that the [RetrieveLocation](https://developer.squareup.com/reference/square_2024-07-17/locations-api/retrieve-location) endpoint returns in a response.
 type RetrieveLocationResponse struct {
-	// Information on errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Location *Location `json:"location,omitempty"`
+	// Information about errors encountered during the request.
+	Errors   []ModelError `json:"errors,omitempty"`
+	Location *Location    `json:"location,omitempty"`
 }

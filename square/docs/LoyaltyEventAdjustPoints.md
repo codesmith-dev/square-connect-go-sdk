@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LoyaltyProgramId** | **string** | The Square-assigned ID of the &#x60;loyalty program&#x60;. | [optional] [default to null]
+**LoyaltyProgramId** | **string** | The Square-assigned ID of the [loyalty program](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyProgram). | [optional] [default to null]
 **Points** | **int32** | The number of points added or removed. | [default to null]
 **Reason** | **string** | The reason for the adjustment of points. | [optional] [default to null]
 

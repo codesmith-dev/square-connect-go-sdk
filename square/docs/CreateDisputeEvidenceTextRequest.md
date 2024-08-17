@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IdempotencyKey** | **string** | The Unique ID. For more information, see [Idempotency](https://developer.squareup.com/docs/docs/working-with-apis/idempotency). | [default to null]
-**EvidenceType** | **string** | The type of evidence you are uploading. See [DisputeEvidenceType](#type-disputeevidencetype) for possible values | [optional] [default to null]
+**IdempotencyKey** | **string** | A unique key identifying the request. For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency). | [default to null]
+**EvidenceType** | **string** | The type of evidence you are uploading. | [optional] [default to null]
 **EvidenceText** | **string** | The evidence string. | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

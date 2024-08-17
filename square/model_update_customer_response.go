@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the UpdateCustomer endpoint.  One of `errors` or `customer` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [UpdateCustomer](https://developer.squareup.com/reference/square_2024-07-17/customers-api/update-customer) or [BulkUpdateCustomers](https://developer.squareup.com/reference/square_2024-07-17/customers-api/bulk-update-customers) endpoint.  Either `errors` or `customer` is present in a given response (never both).
 type UpdateCustomerResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Customer *Customer `json:"customer,omitempty"`
+	Errors   []ModelError `json:"errors,omitempty"`
+	Customer *Customer    `json:"customer,omitempty"`
 }

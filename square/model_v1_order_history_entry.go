@@ -11,7 +11,7 @@ package square
 
 // V1OrderHistoryEntry
 type V1OrderHistoryEntry struct {
-	// The type of action performed on the order. See [V1OrderHistoryEntryAction](#type-v1orderhistoryentryaction) for possible values
+	// The type of action performed on the order.
 	Action string `json:"action,omitempty"`
 	// The time when the action was performed, in ISO 8601 format.
 	CreatedAt string `json:"created_at,omitempty"`

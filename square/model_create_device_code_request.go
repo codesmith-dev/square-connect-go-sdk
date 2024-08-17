@@ -10,7 +10,7 @@
 package square
 
 type CreateDeviceCodeRequest struct {
-	// A unique string that identifies this CreateDeviceCode request. Keys can be any valid string but must be unique for every CreateDeviceCode request.  See [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
-	IdempotencyKey string `json:"idempotency_key"`
-	DeviceCode *DeviceCode `json:"device_code"`
+	// A unique string that identifies this CreateDeviceCode request. Keys can be any valid string but must be unique for every CreateDeviceCode request.  See [Idempotency keys](https://developer.squareup.com/docs/build-basics/common-api-patterns/idempotency) for more information.
+	IdempotencyKey string      `json:"idempotency_key"`
+	DeviceCode     *DeviceCode `json:"device_code"`
 }

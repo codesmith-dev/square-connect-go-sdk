@@ -15,23 +15,25 @@ type InventoryTransfer struct {
 	Id string `json:"id,omitempty"`
 	// An optional ID provided by the application to tie the `InventoryTransfer` to an external system.
 	ReferenceId string `json:"reference_id,omitempty"`
-	// The `InventoryState` for the quantity of items being transferred. See [InventoryState](#type-inventorystate) for possible values
+	// The [inventory state](https://developer.squareup.com/reference/square_2024-07-17/enums/InventoryState) for the quantity of items being transferred.
 	State string `json:"state,omitempty"`
-	// The Square ID of the `Location` where the related quantity of items were tracked before the transfer.
+	// The Square-generated ID of the [Location](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) where the related quantity of items was tracked before the transfer.
 	FromLocationId string `json:"from_location_id,omitempty"`
-	// The Square ID of the `Location` where the related quantity of items were tracked after the transfer.
+	// The Square-generated ID of the [Location](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) where the related quantity of items was tracked after the transfer.
 	ToLocationId string `json:"to_location_id,omitempty"`
-	// The Square generated ID of the `CatalogObject` being tracked.
+	// The Square-generated ID of the [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The `CatalogObjectType` of the `CatalogObject` being tracked.Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](https://developer.squareup.com/reference/square_2024-07-17/enums/CatalogObjectType) of the [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) being tracked.   The Inventory API supports setting and reading the `\"catalog_object_type\": \"ITEM_VARIATION\"` field value.  In addition, it can also read the `\"catalog_object_type\": \"ITEM\"` field value that is set by the Square Restaurants app.
 	CatalogObjectType string `json:"catalog_object_type,omitempty"`
 	// The number of items affected by the transfer as a decimal string. Can support up to 5 digits after the decimal point.
 	Quantity string `json:"quantity,omitempty"`
-	// A client-generated timestamp in RFC 3339 format that indicates when the transfer took place. For write actions, the `occurred_at` timestamp cannot be older than 24 hours or in the future relative to the time of the request.
+	// A client-generated RFC 3339-formatted timestamp that indicates when the transfer took place. For write actions, the `occurred_at` timestamp cannot be older than 24 hours or in the future relative to the time of the request.
 	OccurredAt string `json:"occurred_at,omitempty"`
-	// A read-only timestamp in RFC 3339 format that indicates when Square received the transfer request.
-	CreatedAt string `json:"created_at,omitempty"`
-	Source *SourceApplication `json:"source,omitempty"`
-	// The Square ID of the `Employee` responsible for the inventory transfer.
+	// An RFC 3339-formatted timestamp that indicates when Square received the transfer request.
+	CreatedAt string             `json:"created_at,omitempty"`
+	Source    *SourceApplication `json:"source,omitempty"`
+	// The Square-generated ID of the [Employee](https://developer.squareup.com/reference/square_2024-07-17/objects/Employee) responsible for the inventory transfer.
 	EmployeeId string `json:"employee_id,omitempty"`
+	// The Square-generated ID of the [Team Member](https://developer.squareup.com/reference/square_2024-07-17/objects/TeamMember) responsible for the inventory transfer.
+	TeamMemberId string `json:"team_member_id,omitempty"`
 }

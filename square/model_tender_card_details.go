@@ -11,9 +11,9 @@ package square
 
 // Represents additional details of a tender with `type` `CARD` or `SQUARE_GIFT_CARD`
 type TenderCardDetails struct {
-	// The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See `TenderCardDetailsStatus` for possible values. See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
+	// The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](https://developer.squareup.com/reference/square_2024-07-17/enums/TenderCardDetailsStatus) for possible values.
 	Status string `json:"status,omitempty"`
-	Card *Card `json:"card,omitempty"`
-	// The method used to enter the card's details for the transaction. See [TenderCardDetailsEntryMethod](#type-tendercarddetailsentrymethod) for possible values
+	Card   *Card  `json:"card,omitempty"`
+	// The method used to enter the card's details for the transaction.
 	EntryMethod string `json:"entry_method,omitempty"`
 }

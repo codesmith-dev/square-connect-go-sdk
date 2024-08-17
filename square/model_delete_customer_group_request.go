@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the fields that can be provided in a request to the [DeleteCustomerGroup](#endpoint-deletecustomergroup) endpoint.
-type DeleteCustomerGroupRequest struct {
-}
+// Defines the fields that can be included in a request to the [DeleteCustomerGroup](https://developer.squareup.com/reference/square_2024-07-17/customer-groups-api/delete-customer-group) endpoint.
+type DeleteCustomerGroupRequest struct{}

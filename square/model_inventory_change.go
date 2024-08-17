@@ -9,11 +9,14 @@
  */
 package square
 
-// Represents a single physical count, inventory, adjustment, or transfer that is part of the history of inventory changes for a particular `CatalogObject`.
+// Represents a single physical count, inventory, adjustment, or transfer that is part of the history of inventory changes for a particular [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) instance.
 type InventoryChange struct {
-	// Indicates how the inventory change was applied. See `InventoryChangeType` for all possible values. See [InventoryChangeType](#type-inventorychangetype) for possible values
-	Type_ string `json:"type,omitempty"`
-	PhysicalCount *InventoryPhysicalCount `json:"physical_count,omitempty"`
-	Adjustment *InventoryAdjustment `json:"adjustment,omitempty"`
-	Transfer *InventoryTransfer `json:"transfer,omitempty"`
+	// Indicates how the inventory change is applied. See [InventoryChangeType](https://developer.squareup.com/reference/square_2024-07-17/enums/InventoryChangeType) for all possible values.
+	Type_           string                  `json:"type,omitempty"`
+	PhysicalCount   *InventoryPhysicalCount `json:"physical_count,omitempty"`
+	Adjustment      *InventoryAdjustment    `json:"adjustment,omitempty"`
+	Transfer        *InventoryTransfer      `json:"transfer,omitempty"`
+	MeasurementUnit *CatalogMeasurementUnit `json:"measurement_unit,omitempty"`
+	// The ID of the [CatalogMeasurementUnit](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogMeasurementUnit) object representing the catalog measurement unit associated with the inventory change.
+	MeasurementUnitId string `json:"measurement_unit_id,omitempty"`
 }

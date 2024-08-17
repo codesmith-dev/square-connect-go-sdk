@@ -9,5 +9,4 @@
  */
 package square
 
-type CaptureTransactionRequest struct {
-}
+type CaptureTransactionRequest struct{}

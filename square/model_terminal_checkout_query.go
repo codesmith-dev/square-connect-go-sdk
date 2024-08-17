@@ -11,5 +11,5 @@ package square
 
 type TerminalCheckoutQuery struct {
 	Filter *TerminalCheckoutQueryFilter `json:"filter,omitempty"`
-	Sort *TerminalCheckoutQuerySort `json:"sort,omitempty"`
+	Sort   *TerminalCheckoutQuerySort   `json:"sort,omitempty"`
 }

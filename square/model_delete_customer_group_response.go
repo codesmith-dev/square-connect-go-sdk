@@ -9,7 +9,7 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the [DeleteCustomerGroup](#endpoint-deletecustomergroup) endpoint.
+// Defines the fields that are included in the response body of a request to the [DeleteCustomerGroup](https://developer.squareup.com/reference/square_2024-07-17/customer-groups-api/delete-customer-group) endpoint.
 type DeleteCustomerGroupResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

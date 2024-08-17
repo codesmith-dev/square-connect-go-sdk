@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the fields that are included in the request body of a request to the [AddGroupToCustomer](#endpoint-addgrouptocustomer) endpoint.
-type AddGroupToCustomerRequest struct {
-}
+// Defines the fields that are included in the request body of a request to the [AddGroupToCustomer](https://developer.squareup.com/reference/square_2024-07-17/customers-api/add-group-to-customer) endpoint.
+type AddGroupToCustomerRequest struct{}

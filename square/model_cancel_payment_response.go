@@ -9,9 +9,9 @@
  */
 package square
 
-// The return value from the [CancelPayment](#endpoint-payments-cancelpayment) endpoint.
+// Defines the response returned by [CancelPayment](https://developer.squareup.com/reference/square_2024-07-17/payments-api/cancel-payment).
 type CancelPaymentResponse struct {
 	// Information about errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Payment *Payment `json:"payment,omitempty"`
+	Errors  []ModelError `json:"errors,omitempty"`
+	Payment *Payment     `json:"payment,omitempty"`
 }

@@ -9,6 +9,5 @@
  */
 package square
 
-// Retrieve details for a specific payment.
-type GetPaymentRequest struct {
-}
+// Describes a request to retrieve a payment using  [GetPayment](https://developer.squareup.com/reference/square_2024-07-17/payments-api/get-payment).
+type GetPaymentRequest struct{}

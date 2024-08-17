@@ -9,13 +9,15 @@
  */
 package square
 
-// Represents a set of `CustomerQuery` filters used to limit the set of `Customers` returned by `SearchCustomers`.
+// Represents the filtering criteria in a [search query](https://developer.squareup.com/reference/square_2024-07-17/objects/CustomerQuery) that defines how to filter customer profiles returned in [SearchCustomers](https://developer.squareup.com/reference/square_2024-07-17/customers-api/search-customers) results.
 type CustomerFilter struct {
-	CreationSource *CustomerCreationSourceFilter `json:"creation_source,omitempty"`
-	CreatedAt *TimeRange `json:"created_at,omitempty"`
-	UpdatedAt *TimeRange `json:"updated_at,omitempty"`
-	EmailAddress *CustomerTextFilter `json:"email_address,omitempty"`
-	PhoneNumber *CustomerTextFilter `json:"phone_number,omitempty"`
-	ReferenceId *CustomerTextFilter `json:"reference_id,omitempty"`
-	GroupIds *FilterValue `json:"group_ids,omitempty"`
+	CreationSource  *CustomerCreationSourceFilter   `json:"creation_source,omitempty"`
+	CreatedAt       *TimeRange                      `json:"created_at,omitempty"`
+	UpdatedAt       *TimeRange                      `json:"updated_at,omitempty"`
+	EmailAddress    *CustomerTextFilter             `json:"email_address,omitempty"`
+	PhoneNumber     *CustomerTextFilter             `json:"phone_number,omitempty"`
+	ReferenceId     *CustomerTextFilter             `json:"reference_id,omitempty"`
+	GroupIds        *FilterValue                    `json:"group_ids,omitempty"`
+	CustomAttribute *CustomerCustomAttributeFilters `json:"custom_attribute,omitempty"`
+	SegmentIds      *FilterValue                    `json:"segment_ids,omitempty"`
 }

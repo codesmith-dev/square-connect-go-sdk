@@ -10,5 +10,4 @@
 package square
 
 // Request object to fetch a specific `BankAccount` by the object ID.
-type GetBankAccountRequest struct {
-}
+type GetBankAccountRequest struct{}

@@ -11,6 +11,6 @@ package square
 
 type RetrieveInventoryPhysicalCountResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Count *InventoryPhysicalCount `json:"count,omitempty"`
+	Errors []ModelError            `json:"errors,omitempty"`
+	Count  *InventoryPhysicalCount `json:"count,omitempty"`
 }

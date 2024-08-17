@@ -9,5 +9,4 @@
  */
 package square
 
-type V1RetrieveOrderRequest struct {
-}
+type V1RetrieveOrderRequest struct{}

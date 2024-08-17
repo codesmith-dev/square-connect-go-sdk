@@ -11,7 +11,7 @@ package square
 
 // A parent Catalog Object model represents a set of Quick Amounts and the settings control the amounts.
 type CatalogQuickAmountsSettings struct {
-	// Represents the option seller currently uses on Quick Amounts. See [CatalogQuickAmountsSettingsOption](#type-catalogquickamountssettingsoption) for possible values
+	// Represents the option seller currently uses on Quick Amounts.
 	Option string `json:"option"`
 	// Represents location's eligibility for auto amounts The boolean should be consistent with whether there are AUTO amounts in the `amounts`.
 	EligibleForAutoAmounts bool `json:"eligible_for_auto_amounts,omitempty"`

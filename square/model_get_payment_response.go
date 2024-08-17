@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the [GetPayment](#endpoint-payments-getpayment) endpoint.
+// Defines the response returned by [GetPayment](https://developer.squareup.com/reference/square_2024-07-17/payments-api/get-payment).
 type GetPaymentResponse struct {
 	// Information about errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Payment *Payment `json:"payment,omitempty"`
+	Errors  []ModelError `json:"errors,omitempty"`
+	Payment *Payment     `json:"payment,omitempty"`
 }

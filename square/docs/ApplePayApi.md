@@ -10,7 +10,7 @@ Method | HTTP request | Description
 > RegisterDomainResponse RegisterDomain(ctx, body)
 RegisterDomain
 
-Activates a domain for use with Web Apple Pay and Square. A validation will be performed on this domain by Apple to ensure is it properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Web Apple Pay with Square for merchants using their platform.  To learn more about Apple Pay on Web see the Apple Pay section in the [Square Payment Form Walkthrough](/docs/payment-form/payment-form-walkthrough).
+Activates a domain for use with Apple Pay on the Web and Square. A validation is performed on this domain by Apple to ensure that it is properly set up as an Apple Pay enabled domain.  This endpoint provides an easy way for platform developers to bulk activate Apple Pay on the Web with Square for merchants using their platform.  Note: You will need to host a valid domain verification file on your domain to support Apple Pay.  The current version of this file is always available at https://app.squareup.com/digital-wallets/apple-pay/apple-developer-merchantid-domain-association, and should be hosted at `.well_known/apple-developer-merchantid-domain-association` on your domain.  This file is subject to change; we strongly recommend checking for updates regularly and avoiding long-lived caches that might not keep in sync with the correct file version.  To learn more about the Web Payments SDK and how to add Apple Pay, see [Take an Apple Pay Payment](https://developer.squareup.com/docs/web-payments/apple-pay).
 
 ### Required Parameters
 

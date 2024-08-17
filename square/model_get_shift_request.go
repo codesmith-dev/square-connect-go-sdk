@@ -9,6 +9,5 @@
  */
 package square
 
-// A request to get a `Shift` by ID
-type GetShiftRequest struct {
-}
+// A request to get a `Shift` by ID.
+type GetShiftRequest struct{}

@@ -11,8 +11,8 @@ package square
 
 // The set of search requirements.
 type SearchLoyaltyRewardsRequestLoyaltyRewardQuery struct {
-	// The ID of the `loyalty account` to which the loyalty reward belongs.
+	// The ID of the [loyalty account](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyAccount) to which the loyalty reward belongs.
 	LoyaltyAccountId string `json:"loyalty_account_id"`
-	// The status of the loyalty reward. See [LoyaltyRewardStatus](#type-loyaltyrewardstatus) for possible values
+	// The status of the loyalty reward.
 	Status string `json:"status,omitempty"`
 }

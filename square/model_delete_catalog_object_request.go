@@ -9,5 +9,4 @@
  */
 package square
 
-type DeleteCatalogObjectRequest struct {
-}
+type DeleteCatalogObjectRequest struct{}

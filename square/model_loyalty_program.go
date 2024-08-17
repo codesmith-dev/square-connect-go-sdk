@@ -9,21 +9,22 @@
  */
 package square
 
+// Represents a Square loyalty program. Loyalty programs define how buyers can earn points and redeem points for rewards.  Square sellers can have only one loyalty program, which is created and managed from the Seller Dashboard.  For more information, see [Loyalty Program Overview](https://developer.squareup.com/docs/loyalty/overview).
 type LoyaltyProgram struct {
 	// The Square-assigned ID of the loyalty program. Updates to  the loyalty program do not modify the identifier.
-	Id string `json:"id"`
-	// Whether the program is currently active. See [LoyaltyProgramStatus](#type-loyaltyprogramstatus) for possible values
-	Status string `json:"status"`
+	Id string `json:"id,omitempty"`
+	// Whether the program is currently active.
+	Status string `json:"status,omitempty"`
 	// The list of rewards for buyers, sorted by ascending points.
-	RewardTiers []LoyaltyProgramRewardTier `json:"reward_tiers"`
+	RewardTiers      []LoyaltyProgramRewardTier      `json:"reward_tiers,omitempty"`
 	ExpirationPolicy *LoyaltyProgramExpirationPolicy `json:"expiration_policy,omitempty"`
-	Terminology *LoyaltyProgramTerminology `json:"terminology"`
-	// The `locations` at which the program is active.
+	Terminology      *LoyaltyProgramTerminology      `json:"terminology,omitempty"`
+	// The [locations](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) at which the program is active.
 	LocationIds []string `json:"location_ids"`
 	// The timestamp when the program was created, in RFC 3339 format.
-	CreatedAt string `json:"created_at"`
+	CreatedAt string `json:"created_at,omitempty"`
 	// The timestamp when the reward was last updated, in RFC 3339 format.
-	UpdatedAt string `json:"updated_at"`
-	// Defines how buyers can earn loyalty points.
-	AccrualRules []LoyaltyProgramAccrualRule `json:"accrual_rules"`
+	UpdatedAt string `json:"updated_at,omitempty"`
+	// Defines how buyers can earn loyalty points from the base loyalty program. To check for associated [loyalty promotions](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyPromotion) that enable buyers to earn extra points, call [ListLoyaltyPromotions](https://developer.squareup.com/reference/square_2024-07-17/loyalty-api/list-loyalty-promotions).
+	AccrualRules []LoyaltyProgramAccrualRule `json:"accrual_rules,omitempty"`
 }

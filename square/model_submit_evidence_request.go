@@ -10,5 +10,4 @@
 package square
 
 // Defines the parameters for a `SubmitEvidence` request.
-type SubmitEvidenceRequest struct {
-}
+type SubmitEvidenceRequest struct{}

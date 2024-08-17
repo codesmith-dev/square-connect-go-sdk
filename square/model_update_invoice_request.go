@@ -12,8 +12,8 @@ package square
 // Describes a `UpdateInvoice` request.
 type UpdateInvoiceRequest struct {
 	Invoice *Invoice `json:"invoice"`
-	// A unique string that identifies the `UpdateInvoice` request. If you do not provide `idempotency_key` (or provide an empty string as the value), the endpoint treats each request as independent.  For more information, see [Idempotency](https://developer.squareup.com/docs/docs/working-with-apis/idempotency).
+	// A unique string that identifies the `UpdateInvoice` request. If you do not provide `idempotency_key` (or provide an empty string as the value), the endpoint treats each request as independent.  For more information, see [Idempotency](https://developer.squareup.com/docs/build-basics/common-api-patterns/idempotency).
 	IdempotencyKey string `json:"idempotency_key,omitempty"`
-	// The list of fields to clear. For examples, see [Update an invoice](https://developer.squareup.com/docs/docs/invoices-api/overview#update-an-invoice).
-	FieldsToClear []string `json:"fields_to_clear,omitempty"`
+	// The list of fields to clear. Although this field is currently supported, we recommend using null values or the `remove` field when possible. For examples, see [Update an Invoice](https://developer.squareup.com/docs/invoices-api/update-invoices).
+	FieldsToClear []string `json:"fields_to_clear"`
 }

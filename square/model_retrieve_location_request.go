@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the fields that are included in the request body for the __RetrieveLocation__ endpoint.
-type RetrieveLocationRequest struct {
-}
+// Defines the fields that are included in the request body for the [RetrieveLocation](https://developer.squareup.com/reference/square_2024-07-17/locations-api/retrieve-location) endpoint.
+type RetrieveLocationRequest struct{}

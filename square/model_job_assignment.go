@@ -13,8 +13,8 @@ package square
 type JobAssignment struct {
 	// The title of the job.
 	JobTitle string `json:"job_title"`
-	// The current pay type for the job assignment used to calculate the pay amount in a pay period. See [JobAssignmentPayType](#type-jobassignmentpaytype) for possible values
-	PayType string `json:"pay_type"`
+	// The current pay type for the job assignment used to calculate the pay amount in a pay period.
+	PayType    string `json:"pay_type"`
 	HourlyRate *Money `json:"hourly_rate,omitempty"`
 	AnnualRate *Money `json:"annual_rate,omitempty"`
 	// The planned hours per week for the job. Set if the job `PayType` is `SALARY`.

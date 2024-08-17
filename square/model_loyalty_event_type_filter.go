@@ -11,6 +11,6 @@ package square
 
 // Filter events by event type.
 type LoyaltyEventTypeFilter struct {
-	// The loyalty event types used to filter the result. If multiple values are specified, the endpoint uses a  logical OR to combine them. See [LoyaltyEventType](#type-loyaltyeventtype) for possible values
+	// The loyalty event types used to filter the result. If multiple values are specified, the endpoint uses a  logical OR to combine them.
 	Types []string `json:"types"`
 }

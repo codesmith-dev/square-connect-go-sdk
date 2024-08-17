@@ -9,5 +9,4 @@
  */
 package square
 
-type CancelTerminalRefundRequest struct {
-}
+type CancelTerminalRefundRequest struct{}

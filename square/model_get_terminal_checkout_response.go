@@ -10,7 +10,7 @@
 package square
 
 type GetTerminalCheckoutResponse struct {
-	// Information on errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	// Information about errors encountered during the request.
+	Errors   []ModelError      `json:"errors,omitempty"`
 	Checkout *TerminalCheckout `json:"checkout,omitempty"`
 }

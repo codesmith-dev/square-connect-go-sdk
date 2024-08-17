@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines parameters in a  [CancelSubscription](#endpoint-subscriptions-cancelsubscription) endpoint request.
-type CancelSubscriptionRequest struct {
-}
+// Defines input parameters in a request to the  [CancelSubscription](https://developer.squareup.com/reference/square_2024-07-17/subscriptions-api/cancel-subscription) endpoint.
+type CancelSubscriptionRequest struct{}

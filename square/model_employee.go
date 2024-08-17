@@ -9,7 +9,7 @@
  */
 package square
 
-// An employee object that is used by the external API.
+// An employee object that is used by the external API.  DEPRECATED at version 2020-08-26. Replaced by [TeamMember](https://developer.squareup.com/reference/square_2024-07-17/objects/TeamMember).
 type Employee struct {
 	// UUID for this object.
 	Id string `json:"id,omitempty"`
@@ -23,7 +23,7 @@ type Employee struct {
 	PhoneNumber string `json:"phone_number,omitempty"`
 	// A list of location IDs where this employee has access to.
 	LocationIds []string `json:"location_ids,omitempty"`
-	// Specifies the status of the employees being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
+	// Specifies the status of the employees being fetched.
 	Status string `json:"status,omitempty"`
 	// Whether this employee is the owner of the merchant. Each merchant has one owner employee, and that employee has full authority over the account.
 	IsOwner bool `json:"is_owner,omitempty"`

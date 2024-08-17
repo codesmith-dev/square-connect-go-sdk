@@ -17,7 +17,7 @@ type InvoicePaymentReminder struct {
 	RelativeScheduledDays int32 `json:"relative_scheduled_days,omitempty"`
 	// The reminder message.
 	Message string `json:"message,omitempty"`
-	// The status of the reminder. See [InvoicePaymentReminderStatus](#type-invoicepaymentreminderstatus) for possible values
+	// The status of the reminder.
 	Status string `json:"status,omitempty"`
 	// If sent, the timestamp when the reminder was sent, in RFC 3339 format.
 	SentAt string `json:"sent_at,omitempty"`

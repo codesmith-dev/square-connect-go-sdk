@@ -13,7 +13,7 @@ package square
 type CashDrawerShift struct {
 	// The shift unique ID.
 	Id string `json:"id,omitempty"`
-	// The shift current state. See [CashDrawerShiftState](#type-cashdrawershiftstate) for possible values
+	// The shift current state.
 	State string `json:"state,omitempty"`
 	// The time when the shift began, in ISO 8601 format.
 	OpenedAt string `json:"opened_at,omitempty"`
@@ -21,22 +21,28 @@ type CashDrawerShift struct {
 	EndedAt string `json:"ended_at,omitempty"`
 	// The time when the shift was closed, in ISO 8601 format.
 	ClosedAt string `json:"closed_at,omitempty"`
-	// The IDs of all employees that were logged into Square Point of Sale at any point while the cash drawer shift was open.
-	EmployeeIds []string `json:"employee_ids,omitempty"`
-	// The ID of the employee that started the cash drawer shift.
-	OpeningEmployeeId string `json:"opening_employee_id,omitempty"`
-	// The ID of the employee that ended the cash drawer shift.
-	EndingEmployeeId string `json:"ending_employee_id,omitempty"`
-	// The ID of the employee that closed the cash drawer shift by auditing the cash drawer contents.
-	ClosingEmployeeId string `json:"closing_employee_id,omitempty"`
 	// The free-form text description of a cash drawer by an employee.
-	Description string `json:"description,omitempty"`
-	OpenedCashMoney *Money `json:"opened_cash_money,omitempty"`
-	CashPaymentMoney *Money `json:"cash_payment_money,omitempty"`
-	CashRefundsMoney *Money `json:"cash_refunds_money,omitempty"`
-	CashPaidInMoney *Money `json:"cash_paid_in_money,omitempty"`
-	CashPaidOutMoney *Money `json:"cash_paid_out_money,omitempty"`
-	ExpectedCashMoney *Money `json:"expected_cash_money,omitempty"`
-	ClosedCashMoney *Money `json:"closed_cash_money,omitempty"`
-	Device *CashDrawerDevice `json:"device,omitempty"`
+	Description       string            `json:"description,omitempty"`
+	OpenedCashMoney   *Money            `json:"opened_cash_money,omitempty"`
+	CashPaymentMoney  *Money            `json:"cash_payment_money,omitempty"`
+	CashRefundsMoney  *Money            `json:"cash_refunds_money,omitempty"`
+	CashPaidInMoney   *Money            `json:"cash_paid_in_money,omitempty"`
+	CashPaidOutMoney  *Money            `json:"cash_paid_out_money,omitempty"`
+	ExpectedCashMoney *Money            `json:"expected_cash_money,omitempty"`
+	ClosedCashMoney   *Money            `json:"closed_cash_money,omitempty"`
+	Device            *CashDrawerDevice `json:"device,omitempty"`
+	// The shift start time in RFC 3339 format.
+	CreatedAt string `json:"created_at,omitempty"`
+	// The shift updated at time in RFC 3339 format.
+	UpdatedAt string `json:"updated_at,omitempty"`
+	// The ID of the location the cash drawer shift belongs to.
+	LocationId string `json:"location_id,omitempty"`
+	// The IDs of all team members that were logged into Square Point of Sale at any point while the cash drawer shift was open.
+	TeamMemberIds []string `json:"team_member_ids,omitempty"`
+	// The ID of the team member that started the cash drawer shift.
+	OpeningTeamMemberId string `json:"opening_team_member_id,omitempty"`
+	// The ID of the team member that ended the cash drawer shift.
+	EndingTeamMemberId string `json:"ending_team_member_id,omitempty"`
+	// The ID of the team member that closed the cash drawer shift by auditing the cash drawer contents.
+	ClosingTeamMemberId string `json:"closing_team_member_id,omitempty"`
 }

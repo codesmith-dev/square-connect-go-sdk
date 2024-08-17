@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the fields that are included in the request body of a request to the [RemoveGroupFromCustomer](#endpoint-removegroupfromcustomer) endpoint.
-type RemoveGroupFromCustomerRequest struct {
-}
+// Defines the fields that are included in the request body of a request to the [RemoveGroupFromCustomer](https://developer.squareup.com/reference/square_2024-07-17/customers-api/remove-group-from-customer) endpoint.
+type RemoveGroupFromCustomerRequest struct{}

@@ -10,5 +10,4 @@
 package square
 
 // Defines the request parameters for the `AcceptDispute` endpoint.
-type AcceptDisputeRequest struct {
-}
+type AcceptDisputeRequest struct{}

@@ -13,8 +13,8 @@ type RiskEvaluationRiskLevel string
 
 // List of RiskEvaluationRiskLevel
 const (
-	PENDING_RiskEvaluationRiskLevel RiskEvaluationRiskLevel = "PENDING"
-	NORMAL_RiskEvaluationRiskLevel RiskEvaluationRiskLevel = "NORMAL"
+	PENDING_RiskEvaluationRiskLevel  RiskEvaluationRiskLevel = "PENDING"
+	NORMAL_RiskEvaluationRiskLevel   RiskEvaluationRiskLevel = "NORMAL"
 	MODERATE_RiskEvaluationRiskLevel RiskEvaluationRiskLevel = "MODERATE"
-	HIGH_RiskEvaluationRiskLevel RiskEvaluationRiskLevel = "HIGH"
+	HIGH_RiskEvaluationRiskLevel     RiskEvaluationRiskLevel = "HIGH"
 )

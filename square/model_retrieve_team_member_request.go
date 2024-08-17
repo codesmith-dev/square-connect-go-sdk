@@ -10,5 +10,4 @@
 package square
 
 // Represents a retrieve request for a `TeamMember` object.
-type RetrieveTeamMemberRequest struct {
-}
+type RetrieveTeamMemberRequest struct{}

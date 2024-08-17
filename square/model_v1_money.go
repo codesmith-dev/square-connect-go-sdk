@@ -11,7 +11,6 @@ package square
 
 type V1Money struct {
 	// Amount in the lowest denominated value of this Currency. E.g. in USD these are cents, in JPY they are Yen (which do not have a 'cent' concept).
-	Amount int32 `json:"amount,omitempty"`
-	//  See [Currency](#type-currency) for possible values
+	Amount       int32  `json:"amount,omitempty"`
 	CurrencyCode string `json:"currency_code,omitempty"`
 }

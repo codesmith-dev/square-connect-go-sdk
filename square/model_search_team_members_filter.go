@@ -9,10 +9,12 @@
  */
 package square
 
-// Represents a filter used in a search for `TeamMember` objects. `AND` logic is applied between the individual fields, and `OR` logic is applied within list-based fields. For example, setting this filter value, ``` filter = (locations_ids = [\"A\", \"B\"], status = ACTIVE) ``` returns only active team members assigned to either location \"A\" or \"B\".
+// Represents a filter used in a search for `TeamMember` objects. `AND` logic is applied between the individual fields, and `OR` logic is applied within list-based fields. For example, setting this filter value: ``` filter = (locations_ids = [\"A\", \"B\"], status = ACTIVE) ``` returns only active team members assigned to either location \"A\" or \"B\".
 type SearchTeamMembersFilter struct {
-	// When present, filter by team members assigned to the specified locations. When empty, include team members assigned to any location.
+	// When present, filters by team members assigned to the specified locations. When empty, includes team members assigned to any location.
 	LocationIds []string `json:"location_ids,omitempty"`
-	// When present, filter by team members who match the given status. When empty, include team members of all statuses. See [TeamMemberStatus](#type-teammemberstatus) for possible values
+	// When present, filters by team members who match the given status. When empty, includes team members of all statuses.
 	Status string `json:"status,omitempty"`
+	// When present and set to true, returns the team member who is the owner of the Square account.
+	IsOwner bool `json:"is_owner,omitempty"`
 }

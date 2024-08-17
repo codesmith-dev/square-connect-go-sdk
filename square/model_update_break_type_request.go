@@ -9,7 +9,7 @@
  */
 package square
 
-// A request to update a `BreakType`
+// A request to update a `BreakType`.
 type UpdateBreakTypeRequest struct {
 	BreakType *BreakType `json:"break_type"`
 }

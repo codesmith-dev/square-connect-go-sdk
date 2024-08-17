@@ -9,5 +9,4 @@
  */
 package square
 
-type GetTerminalCheckoutRequest struct {
-}
+type GetTerminalCheckoutRequest struct{}

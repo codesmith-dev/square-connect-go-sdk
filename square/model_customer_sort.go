@@ -9,10 +9,10 @@
  */
 package square
 
-// Specifies how searched customers profiles are sorted, including the sort key and sort order.
+// Represents the sorting criteria in a [search query](https://developer.squareup.com/reference/square_2024-07-17/objects/CustomerQuery) that defines how to sort customer profiles returned in [SearchCustomers](https://developer.squareup.com/reference/square_2024-07-17/customers-api/search-customers) results.
 type CustomerSort struct {
-	//  Use one or more customer attributes as the sort key to sort searched customer profiles.  For example, use creation date (`created_at`) of customers or default attributes as the sort key.   Default: `DEFAULT`. See [CustomerSortField](#type-customersortfield) for possible values
+	// Indicates the fields to use as the sort key, which is either the default set of fields or `created_at`.  The default value is `DEFAULT`.
 	Field string `json:"field,omitempty"`
-	// Indicates the order in which results should be sorted based on the sort field value. Strings use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings.  Default: `ASC`. See [SortOrder](#type-sortorder) for possible values
+	// Indicates the order in which results should be sorted based on the sort field value. Strings use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings.  The default value is `ASC`.
 	Order string `json:"order,omitempty"`
 }

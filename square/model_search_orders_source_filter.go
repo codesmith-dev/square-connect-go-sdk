@@ -9,8 +9,8 @@
  */
 package square
 
-// Filter based on order `source` information.
+// A filter based on order `source` information.
 type SearchOrdersSourceFilter struct {
-	// Filters by `Source` `name`. Will return any orders with with a `source.name` that matches any of the listed source names.  Max: 10 source names.
+	// Filters by the [Source](https://developer.squareup.com/reference/square_2024-07-17/objects/OrderSource) `name`. The filter returns any orders with a `source.name` that matches any of the listed source names.  Max: 10 source names.
 	SourceNames []string `json:"source_names,omitempty"`
 }

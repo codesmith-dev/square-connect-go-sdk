@@ -17,8 +17,13 @@ type PaymentRefund struct {
 	Status string `json:"status,omitempty"`
 	// The location ID associated with the payment this refund is attached to.
 	LocationId string `json:"location_id,omitempty"`
-	AmountMoney *Money `json:"amount_money"`
-	AppFeeMoney *Money `json:"app_fee_money,omitempty"`
+	// Flag indicating whether or not the refund is linked to an existing payment in Square.
+	Unlinked bool `json:"unlinked,omitempty"`
+	// The destination type for this refund.  Current values include `CARD`, `BANK_ACCOUNT`, `WALLET`, `BUY_NOW_PAY_LATER`, `CASH`, `EXTERNAL`, and `SQUARE_ACCOUNT`.
+	DestinationType    string              `json:"destination_type,omitempty"`
+	DestinationDetails *DestinationDetails `json:"destination_details,omitempty"`
+	AmountMoney        *Money              `json:"amount_money"`
+	AppFeeMoney        *Money              `json:"app_fee_money,omitempty"`
 	// Processing fees and fee adjustments assessed by Square for this refund.
 	ProcessingFee []ProcessingFee `json:"processing_fee,omitempty"`
 	// The ID of the payment associated with this refund.
@@ -31,4 +36,6 @@ type PaymentRefund struct {
 	CreatedAt string `json:"created_at,omitempty"`
 	// The timestamp of when the refund was last updated, in RFC 3339 format.
 	UpdatedAt string `json:"updated_at,omitempty"`
+	// An optional ID of the team member associated with taking the payment.
+	TeamMemberId string `json:"team_member_id,omitempty"`
 }

@@ -16,16 +16,16 @@ type Refund struct {
 	// The ID of the refund's associated location.
 	LocationId string `json:"location_id"`
 	// The ID of the transaction that the refunded tender is part of.
-	TransactionId string `json:"transaction_id"`
+	TransactionId string `json:"transaction_id,omitempty"`
 	// The ID of the refunded tender.
 	TenderId string `json:"tender_id"`
 	// The timestamp for when the refund was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
 	// The reason for the refund being issued.
-	Reason string `json:"reason"`
+	Reason      string `json:"reason"`
 	AmountMoney *Money `json:"amount_money"`
-	// The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`). See [RefundStatus](#type-refundstatus) for possible values
-	Status string `json:"status"`
+	// The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`).
+	Status             string `json:"status"`
 	ProcessingFeeMoney *Money `json:"processing_fee_money,omitempty"`
 	// Additional recipients (other than the merchant) receiving a portion of this refund. For example, fees assessed on a refund of a purchase by a third party integration.
 	AdditionalRecipients []AdditionalRecipient `json:"additional_recipients,omitempty"`

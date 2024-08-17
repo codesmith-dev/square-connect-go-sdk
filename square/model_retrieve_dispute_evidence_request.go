@@ -10,5 +10,4 @@
 package square
 
 // Defines the parameters for a `RetrieveDisputeEvidence` request.
-type RetrieveDisputeEvidenceRequest struct {
-}
+type RetrieveDisputeEvidenceRequest struct{}

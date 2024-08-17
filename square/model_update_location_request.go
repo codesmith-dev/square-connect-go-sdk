@@ -9,7 +9,7 @@
  */
 package square
 
-// Request object for the [UpdateLocation](#endpoint-updatelocation) endpoint.
+// The request object for the [UpdateLocation](https://developer.squareup.com/reference/square_2024-07-17/locations-api/update-location) endpoint.
 type UpdateLocationRequest struct {
 	Location *Location `json:"location,omitempty"`
 }

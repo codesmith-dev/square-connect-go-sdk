@@ -4,13 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The tender&#x27;s unique ID. | [optional] [default to null]
-**Type_** | **string** | The type of tender. See [V1TenderType](#type-v1tendertype) for possible values | [optional] [default to null]
+**Type_** | **string** | The type of tender. | [optional] [default to null]
 **Name** | **string** | A human-readable description of the tender. | [optional] [default to null]
 **EmployeeId** | **string** | The ID of the employee that processed the tender. | [optional] [default to null]
 **ReceiptUrl** | **string** | The URL of the receipt for the tender. | [optional] [default to null]
-**CardBrand** | **string** | The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values | [optional] [default to null]
+**CardBrand** | **string** | The brand of credit card provided. | [optional] [default to null]
 **PanSuffix** | **string** | The last four digits of the provided credit card&#x27;s account number. | [optional] [default to null]
-**EntryMethod** | **string** | The tender&#x27;s unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values | [optional] [default to null]
+**EntryMethod** | **string** | The tender&#x27;s unique ID. | [optional] [default to null]
 **PaymentNote** | **string** | Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER. | [optional] [default to null]
 **TotalMoney** | [***V1Money**](V1Money.md) |  | [optional] [default to null]
 **TenderedMoney** | [***V1Money**](V1Money.md) |  | [optional] [default to null]

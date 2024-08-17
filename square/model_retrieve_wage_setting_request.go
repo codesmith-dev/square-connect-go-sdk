@@ -9,6 +9,5 @@
  */
 package square
 
-// Represents a retrieve request for the wage setting of a team member
-type RetrieveWageSettingRequest struct {
-}
+// Represents a retrieve request for the wage setting of a team member.
+type RetrieveWageSettingRequest struct{}

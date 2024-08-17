@@ -9,8 +9,8 @@
  */
 package square
 
-// Represents a query (including filtering criteria, sorting criteria, or both) used to search for customer profiles.
+// Represents filtering and sorting criteria for a [SearchCustomers](https://developer.squareup.com/reference/square_2024-07-17/customers-api/search-customers) request.
 type CustomerQuery struct {
 	Filter *CustomerFilter `json:"filter,omitempty"`
-	Sort *CustomerSort `json:"sort,omitempty"`
+	Sort   *CustomerSort   `json:"sort,omitempty"`
 }

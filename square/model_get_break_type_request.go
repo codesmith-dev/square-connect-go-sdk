@@ -9,6 +9,5 @@
  */
 package square
 
-// A request to GET a `BreakType` by ID
-type GetBreakTypeRequest struct {
-}
+// A request to get a `BreakType` by ID.
+type GetBreakTypeRequest struct{}

@@ -9,9 +9,9 @@
  */
 package square
 
-// Response object returned by the [UpdateLocation](#endpoint-updatelocation) endpoint.
+// The response object returned by the [UpdateLocation](https://developer.squareup.com/reference/square_2024-07-17/locations-api/update-location) endpoint.
 type UpdateLocationResponse struct {
-	// Information on errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Location *Location `json:"location,omitempty"`
+	// Information about errors encountered during the request.
+	Errors   []ModelError `json:"errors,omitempty"`
+	Location *Location    `json:"location,omitempty"`
 }

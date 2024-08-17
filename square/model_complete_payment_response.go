@@ -9,9 +9,9 @@
  */
 package square
 
-// The return value from a [CompletePayment](#endpoint-payments-completepayment) call.
+// Defines the response returned by[CompletePayment](https://developer.squareup.com/reference/square_2024-07-17/payments-api/complete-payment).
 type CompletePaymentResponse struct {
 	// Information about errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Payment *Payment `json:"payment,omitempty"`
+	Errors  []ModelError `json:"errors,omitempty"`
+	Payment *Payment     `json:"payment,omitempty"`
 }

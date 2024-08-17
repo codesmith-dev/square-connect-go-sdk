@@ -11,7 +11,7 @@ package square
 
 // Represents a tender (i.e., a method of payment) used in a Square transaction.
 type Tender struct {
-	// The tender's unique ID.
+	// The tender's unique ID. It is the associated payment ID.
 	Id string `json:"id,omitempty"`
 	// The ID of the transaction's associated location.
 	LocationId string `json:"location_id,omitempty"`
@@ -20,18 +20,21 @@ type Tender struct {
 	// The timestamp for when the tender was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
 	// An optional note associated with the tender at the time of payment.
-	Note string `json:"note,omitempty"`
-	AmountMoney *Money `json:"amount_money,omitempty"`
-	TipMoney *Money `json:"tip_money,omitempty"`
+	Note               string `json:"note,omitempty"`
+	AmountMoney        *Money `json:"amount_money,omitempty"`
+	TipMoney           *Money `json:"tip_money,omitempty"`
 	ProcessingFeeMoney *Money `json:"processing_fee_money,omitempty"`
 	// If the tender is associated with a customer or represents a customer's card on file, this is the ID of the associated customer.
 	CustomerId string `json:"customer_id,omitempty"`
-	// The type of tender, such as `CARD` or `CASH`. See [TenderType](#type-tendertype) for possible values
-	Type_ string `json:"type"`
-	CardDetails *TenderCardDetails `json:"card_details,omitempty"`
-	CashDetails *TenderCashDetails `json:"cash_details,omitempty"`
+	// The type of tender, such as `CARD` or `CASH`.
+	Type_                 string                       `json:"type"`
+	CardDetails           *TenderCardDetails           `json:"card_details,omitempty"`
+	CashDetails           *TenderCashDetails           `json:"cash_details,omitempty"`
+	BankAccountDetails    *TenderBankAccountDetails    `json:"bank_account_details,omitempty"`
+	BuyNowPayLaterDetails *TenderBuyNowPayLaterDetails `json:"buy_now_pay_later_details,omitempty"`
+	SquareAccountDetails  *TenderSquareAccountDetails  `json:"square_account_details,omitempty"`
 	// Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration.
 	AdditionalRecipients []AdditionalRecipient `json:"additional_recipients,omitempty"`
-	// The ID of the `Payment` that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
+	// The ID of the [Payment](https://developer.squareup.com/reference/square_2024-07-17/objects/Payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
 	PaymentId string `json:"payment_id,omitempty"`
 }

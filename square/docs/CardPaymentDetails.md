@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **VerificationResults** | **string** | For EMV payments, the results of the cardholder verification. The result can be &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;, or &#x60;UNKNOWN&#x60;. | [optional] [default to null]
 **StatementDescription** | **string** | The statement description sent to the card networks.  Note: The actual statement description varies and is likely to be truncated and appended with additional information on a per issuer basis. | [optional] [default to null]
 **DeviceDetails** | [***DeviceDetails**](DeviceDetails.md) |  | [optional] [default to null]
+**CardPaymentTimeline** | [***CardPaymentTimeline**](CardPaymentTimeline.md) |  | [optional] [default to null]
 **RefundRequiresCardPresence** | **bool** | Whether the card must be physically present for the payment to be refunded.  If set to &#x60;true&#x60;, the card must be present. | [optional] [default to null]
 **Errors** | [**[]ModelError**](Error.md) | Information about errors encountered during the request. | [optional] [default to null]
 

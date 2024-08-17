@@ -12,6 +12,6 @@ package square
 // A response that includes the loyalty reward created.
 type CreateLoyaltyRewardResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	Errors []ModelError   `json:"errors,omitempty"`
 	Reward *LoyaltyReward `json:"reward,omitempty"`
 }

@@ -11,7 +11,7 @@ package square
 
 type ListEmployeesRequest struct {
 	LocationId string `json:"location_id,omitempty"`
-	// Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values
+	// Specifies the EmployeeStatus to filter the employee by.
 	Status string `json:"status,omitempty"`
 	// The number of employees to be returned on each page.
 	Limit int32 `json:"limit,omitempty"`

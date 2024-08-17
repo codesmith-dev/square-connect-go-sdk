@@ -11,6 +11,6 @@ package square
 
 type UpdateBookingRequest struct {
 	// A unique key to make this request an idempotent operation.
-	IdempotencyKey string `json:"idempotency_key,omitempty"`
-	Booking *Booking `json:"booking"`
+	IdempotencyKey string   `json:"idempotency_key,omitempty"`
+	Booking        *Booking `json:"booking"`
 }

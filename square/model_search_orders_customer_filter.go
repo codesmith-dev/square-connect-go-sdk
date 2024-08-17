@@ -9,8 +9,8 @@
  */
 package square
 
-// Filter based on Order `customer_id` and any Tender `customer_id` associated with the Order. Does not filter based on the [FulfillmentRecipient](#type-orderfulfillmentrecipient) `customer_id`.
+// A filter based on the order `customer_id` and any tender `customer_id` associated with the order. It does not filter based on the [FulfillmentRecipient](https://developer.squareup.com/reference/square_2024-07-17/objects/FulfillmentRecipient) `customer_id`.
 type SearchOrdersCustomerFilter struct {
-	// List of customer IDs to filter by.  Max: 10 customer IDs.
+	// A list of customer IDs to filter by.  Max: 10 customer ids.
 	CustomerIds []string `json:"customer_ids,omitempty"`
 }

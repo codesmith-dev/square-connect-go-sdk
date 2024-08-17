@@ -9,7 +9,7 @@
  */
 package square
 
-// Defines the body parameters that can be provided in a request to the [UpdateCustomerGroup](#endpoint-updatecustomergroup) endpoint.
+// Defines the body parameters that can be included in a request to the [UpdateCustomerGroup](https://developer.squareup.com/reference/square_2024-07-17/customer-groups-api/update-customer-group) endpoint.
 type UpdateCustomerGroupRequest struct {
 	Group *CustomerGroup `json:"group"`
 }

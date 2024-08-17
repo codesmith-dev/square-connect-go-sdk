@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the fields that are included in requests to the __ListLocations__ endpoint.
-type ListLocationsRequest struct {
-}
+// Defines the fields that are included in requests to the [ListLocations](https://developer.squareup.com/reference/square_2024-07-17/locations-api/list-locations) endpoint.
+type ListLocationsRequest struct{}

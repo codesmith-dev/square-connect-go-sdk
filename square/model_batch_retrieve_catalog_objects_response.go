@@ -12,8 +12,8 @@ package square
 type BatchRetrieveCatalogObjectsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// A list of `CatalogObject`s returned.
+	// A list of [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject)s returned.
 	Objects []CatalogObject `json:"objects,omitempty"`
-	// A list of `CatalogObject`s referenced by the object in the `objects` field.
+	// A list of [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject)s referenced by the object in the `objects` field.
 	RelatedObjects []CatalogObject `json:"related_objects,omitempty"`
 }

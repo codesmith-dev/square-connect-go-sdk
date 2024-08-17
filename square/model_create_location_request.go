@@ -9,7 +9,7 @@
  */
 package square
 
-// Request object for the [CreateLocation](#endpoint-createlocation) endpoint.
+// The request object for the [CreateLocation](https://developer.squareup.com/reference/square_2024-07-17/locations-api/create-location) endpoint.
 type CreateLocationRequest struct {
 	Location *Location `json:"location,omitempty"`
 }

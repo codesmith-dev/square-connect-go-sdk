@@ -9,7 +9,7 @@
  */
 package square
 
-// Specifies the idempotency key of a payment to cancel.
+// Describes a request to cancel a payment using  [CancelPaymentByIdempotencyKey](https://developer.squareup.com/reference/square_2024-07-17/payments-api/cancel-payment-by-idempotency-key).
 type CancelPaymentByIdempotencyKeyRequest struct {
 	// The `idempotency_key` identifying the payment to be canceled.
 	IdempotencyKey string `json:"idempotency_key"`

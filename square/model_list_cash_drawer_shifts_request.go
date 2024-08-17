@@ -12,7 +12,7 @@ package square
 type ListCashDrawerShiftsRequest struct {
 	// The ID of the location to query for a list of cash drawer shifts.
 	LocationId string `json:"location_id"`
-	// The order in which cash drawer shifts are listed in the response, based on their opened_at field. Default value: ASC See [SortOrder](#type-sortorder) for possible values
+	// The order in which cash drawer shifts are listed in the response, based on their opened_at field. Default value: ASC
 	SortOrder string `json:"sort_order,omitempty"`
 	// The inclusive start time of the query on opened_at, in ISO 8601 format.
 	BeginTime string `json:"begin_time,omitempty"`

@@ -11,10 +11,10 @@ package square
 
 // Provides metadata when the event `type` is `ACCUMULATE_POINTS`.
 type LoyaltyEventAccumulatePoints struct {
-	// The ID of the `loyalty program`.
+	// The ID of the [loyalty program](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyProgram).
 	LoyaltyProgramId string `json:"loyalty_program_id,omitempty"`
 	// The number of points accumulated by the event.
 	Points int32 `json:"points,omitempty"`
-	// The ID of the `order` for which the buyer accumulated the points. This field is returned only if the Orders API is used to process orders.
+	// The ID of the [order](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) for which the buyer accumulated the points. This field is returned only if the Orders API is used to process orders.
 	OrderId string `json:"order_id,omitempty"`
 }

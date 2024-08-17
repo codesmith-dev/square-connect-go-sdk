@@ -10,5 +10,4 @@
 package square
 
 // A request to list `LoyaltyProgram`.
-type ListLoyaltyProgramsRequest struct {
-}
+type ListLoyaltyProgramsRequest struct{}

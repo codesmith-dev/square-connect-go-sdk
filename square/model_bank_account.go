@@ -9,23 +9,23 @@
  */
 package square
 
-// Represents a bank account. For more information about  linking a bank account to a Square account, see  [Bank Accounts API](/docs/bank-accounts-api).
+// Represents a bank account. For more information about  linking a bank account to a Square account, see  [Bank Accounts API](https://developer.squareup.com/docs/bank-accounts-api).
 type BankAccount struct {
 	// The unique, Square-issued identifier for the bank account.
 	Id string `json:"id"`
 	// The last few digits of the account number.
 	AccountNumberSuffix string `json:"account_number_suffix"`
-	// The ISO 3166 Alpha-2 country code where the bank account is based. See [Country](#type-country) for possible values
+	// The ISO 3166 Alpha-2 country code where the bank account is based.
 	Country string `json:"country"`
-	// The 3-character ISO 4217 currency code indicating the operating currency of the bank account. For example, the currency code for US dollars is `USD`. See [Currency](#type-currency) for possible values
+	// The 3-character ISO 4217 currency code indicating the operating currency of the bank account. For example, the currency code for US dollars is `USD`.
 	Currency string `json:"currency"`
-	// The financial purpose of the associated bank account. See [BankAccountType](#type-bankaccounttype) for possible values
+	// The financial purpose of the associated bank account.
 	AccountType string `json:"account_type"`
 	// Name of the account holder. This name must match the name  on the targeted bank account record.
 	HolderName string `json:"holder_name"`
-	// Primary identifier for the bank. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api).
+	// Primary identifier for the bank. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/bank-accounts-api).
 	PrimaryBankIdentificationNumber string `json:"primary_bank_identification_number"`
-	// Secondary identifier for the bank. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api).
+	// Secondary identifier for the bank. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/bank-accounts-api).
 	SecondaryBankIdentificationNumber string `json:"secondary_bank_identification_number,omitempty"`
 	// Reference identifier that will be displayed to UK bank account owners when collecting direct debit authorization. Only required for UK bank accounts.
 	DebitMandateReferenceId string `json:"debit_mandate_reference_id,omitempty"`
@@ -33,7 +33,7 @@ type BankAccount struct {
 	ReferenceId string `json:"reference_id,omitempty"`
 	// The location to which the bank account belongs.
 	LocationId string `json:"location_id,omitempty"`
-	// Read-only. The current verification status of this BankAccount object. See [BankAccountStatus](#type-bankaccountstatus) for possible values
+	// Read-only. The current verification status of this BankAccount object.
 	Status string `json:"status"`
 	// Indicates whether it is possible for Square to send money to this bank account.
 	Creditable bool `json:"creditable"`

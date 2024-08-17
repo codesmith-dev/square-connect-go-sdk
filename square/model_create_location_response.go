@@ -9,9 +9,9 @@
  */
 package square
 
-// Response object returned by the [CreateLocation](#endpoint-createlocation) endpoint.
+// The response object returned by the [CreateLocation](https://developer.squareup.com/reference/square_2024-07-17/locations-api/create-location) endpoint.
 type CreateLocationResponse struct {
-	// Information on errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Location *Location `json:"location,omitempty"`
+	// Information about [errors](https://developer.squareup.com/docs/build-basics/handling-errors) encountered during the request.
+	Errors   []ModelError `json:"errors,omitempty"`
+	Location *Location    `json:"location,omitempty"`
 }

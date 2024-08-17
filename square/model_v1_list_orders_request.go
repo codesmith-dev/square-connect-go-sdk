@@ -10,7 +10,7 @@
 package square
 
 type V1ListOrdersRequest struct {
-	// TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
+	// The order in which payments are listed in the response.
 	Order string `json:"order,omitempty"`
 	// The maximum number of payments to return in a single response. This value cannot exceed 200.
 	Limit int32 `json:"limit,omitempty"`

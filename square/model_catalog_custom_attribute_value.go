@@ -9,15 +9,15 @@
  */
 package square
 
-// An instance of a custom attribute. Custom attributes can be defined and added to `ITEM` and `ITEM_VARIATION` type catalog objects. [Read more about custom attributes](/catalog-api/add-custom-attributes).
+// An instance of a custom attribute. Custom attributes can be defined and added to `ITEM` and `ITEM_VARIATION` type catalog objects. [Read more about custom attributes](https://developer.squareup.com/docs/catalog-api/add-custom-attributes).
 type CatalogCustomAttributeValue struct {
 	// The name of the custom attribute.
 	Name string `json:"name,omitempty"`
 	// The string value of the custom attribute.  Populated if `type` = `STRING`.
 	StringValue string `json:"string_value,omitempty"`
-	// __Read-only.__ The id of the `CatalogCustomAttributeDefinition` this value belongs to.
+	// The id of the [CatalogCustomAttributeDefinition](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogCustomAttributeDefinition) this value belongs to.
 	CustomAttributeDefinitionId string `json:"custom_attribute_definition_id,omitempty"`
-	// __Read-only.__ A copy of type from the associated `CatalogCustomAttributeDefinition`. See [CatalogCustomAttributeDefinitionType](#type-catalogcustomattributedefinitiontype) for possible values
+	// A copy of type from the associated `CatalogCustomAttributeDefinition`.
 	Type_ string `json:"type,omitempty"`
 	// Populated if `type` = `NUMBER`. Contains a string representation of a decimal number, using a `.` as the decimal separator.
 	NumberValue string `json:"number_value,omitempty"`
@@ -25,6 +25,6 @@ type CatalogCustomAttributeValue struct {
 	BooleanValue bool `json:"boolean_value,omitempty"`
 	// One or more choices from `allowed_selections`. Populated if `type` = `SELECTION`.
 	SelectionUidValues []string `json:"selection_uid_values,omitempty"`
-	// __Read-only.__ A copy of key from the associated `CatalogCustomAttributeDefinition`.
+	// If the associated `CatalogCustomAttributeDefinition` object is defined by another application, this key is prefixed by the defining application ID. For example, if the CatalogCustomAttributeDefinition has a key attribute of \"cocoa_brand\" and the defining application ID is \"abcd1234\", this key is \"abcd1234:cocoa_brand\" when the application making the request is different from the application defining the custom attribute definition. Otherwise, the key is simply \"cocoa_brand\".
 	Key string `json:"key,omitempty"`
 }

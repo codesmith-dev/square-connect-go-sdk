@@ -13,11 +13,11 @@ type V1TenderEntryMethod string
 
 // List of V1TenderEntryMethod
 const (
-	MANUAL_V1TenderEntryMethod V1TenderEntryMethod = "MANUAL"
-	SCANNED_V1TenderEntryMethod V1TenderEntryMethod = "SCANNED"
-	SQUARE_CASH_V1TenderEntryMethod V1TenderEntryMethod = "SQUARE_CASH"
+	MANUAL_V1TenderEntryMethod        V1TenderEntryMethod = "MANUAL"
+	SCANNED_V1TenderEntryMethod       V1TenderEntryMethod = "SCANNED"
+	SQUARE_CASH_V1TenderEntryMethod   V1TenderEntryMethod = "SQUARE_CASH"
 	SQUARE_WALLET_V1TenderEntryMethod V1TenderEntryMethod = "SQUARE_WALLET"
-	SWIPED_V1TenderEntryMethod V1TenderEntryMethod = "SWIPED"
-	WEB_FORM_V1TenderEntryMethod V1TenderEntryMethod = "WEB_FORM"
-	OTHER_V1TenderEntryMethod V1TenderEntryMethod = "OTHER"
+	SWIPED_V1TenderEntryMethod        V1TenderEntryMethod = "SWIPED"
+	WEB_FORM_V1TenderEntryMethod      V1TenderEntryMethod = "WEB_FORM"
+	OTHER_V1TenderEntryMethod         V1TenderEntryMethod = "OTHER"
 )

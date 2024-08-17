@@ -9,6 +9,5 @@
  */
 package square
 
-// Request object for the [RetrieveMerchant](#endpoint-retrievemerchant) endpoint.
-type RetrieveMerchantRequest struct {
-}
+// Request object for the [RetrieveMerchant](https://developer.squareup.com/reference/square_2024-07-17/merchants-api/retrieve-merchant) endpoint.
+type RetrieveMerchantRequest struct{}

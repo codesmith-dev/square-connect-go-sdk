@@ -9,10 +9,10 @@
  */
 package square
 
-// Identifies the  sort field and sort order.
+// Identifies the sort field and sort order.
 type InvoiceSort struct {
-	// The field to sort on. See [InvoiceSortField](#type-invoicesortfield) for possible values
+	// The field to use for sorting.
 	Field string `json:"field"`
-	// The order to use for sorting the results. See [SortOrder](#type-sortorder) for possible values
+	// The order to use for sorting the results.
 	Order string `json:"order,omitempty"`
 }

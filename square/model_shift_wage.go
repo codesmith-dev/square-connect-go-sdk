@@ -11,7 +11,11 @@ package square
 
 // The hourly wage rate used to compensate an employee for this shift.
 type ShiftWage struct {
-	// The name of the job performed during this shift. Square labor-reporting UIs may group shifts together by title.
-	Title string `json:"title,omitempty"`
+	// The name of the job performed during this shift.
+	Title      string `json:"title,omitempty"`
 	HourlyRate *Money `json:"hourly_rate,omitempty"`
+	// The id of the job performed during this shift. Square labor-reporting UIs might group shifts together by id. This cannot be used to retrieve the job.
+	JobId string `json:"job_id,omitempty"`
+	// Whether team members are eligible for tips when working this job.
+	TipEligible bool `json:"tip_eligible,omitempty"`
 }

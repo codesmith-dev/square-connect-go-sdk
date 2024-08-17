@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the body parameters that can be provided in a request to the [CreateCustomerGroup](#endpoint-createcustomegroup) endpoint.
+// Defines the body parameters that can be included in a request to the [CreateCustomerGroup](https://developer.squareup.com/reference/square_2024-07-17/customer-groups-api/create-customer-group) endpoint.
 type CreateCustomerGroupRequest struct {
-	// The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information.
-	IdempotencyKey string `json:"idempotency_key,omitempty"`
-	Group *CustomerGroup `json:"group"`
+	// The idempotency key for the request. For more information, see [Idempotency](https://developer.squareup.com/docs/build-basics/common-api-patterns/idempotency).
+	IdempotencyKey string         `json:"idempotency_key,omitempty"`
+	Group          *CustomerGroup `json:"group"`
 }

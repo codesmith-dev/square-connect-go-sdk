@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the [RefundPayment](#endpoint-refunds-refundpayment) endpoint.  Note: If there are errors processing the request, the refund field might not be present or it might be present in a FAILED state.
+// Defines the response returned by [RefundPayment](https://developer.squareup.com/reference/square_2024-07-17/refunds-api/refund-payment).  If there are errors processing the request, the `refund` field might not be present, or it might be present with a status of `FAILED`.
 type RefundPaymentResponse struct {
 	// Information about errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	Errors []ModelError   `json:"errors,omitempty"`
 	Refund *PaymentRefund `json:"refund,omitempty"`
 }

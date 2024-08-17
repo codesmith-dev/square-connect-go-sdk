@@ -13,10 +13,10 @@ type V1OrderState string
 
 // List of V1OrderState
 const (
-	PENDING_V1OrderState V1OrderState = "PENDING"
-	OPEN_V1OrderState V1OrderState = "OPEN"
+	PENDING_V1OrderState   V1OrderState = "PENDING"
+	OPEN_V1OrderState      V1OrderState = "OPEN"
 	COMPLETED_V1OrderState V1OrderState = "COMPLETED"
-	CANCELED_V1OrderState V1OrderState = "CANCELED"
-	REFUNDED_V1OrderState V1OrderState = "REFUNDED"
-	REJECTED_V1OrderState V1OrderState = "REJECTED"
+	CANCELED_V1OrderState  V1OrderState = "CANCELED"
+	REFUNDED_V1OrderState  V1OrderState = "REFUNDED"
+	REJECTED_V1OrderState  V1OrderState = "REJECTED"
 )

@@ -13,5 +13,5 @@ type ProductType string
 
 // List of ProductType
 const (
-	API_ProductType ProductType = "TERMINAL_API"
+	TERMINAL_API_ProductType ProductType = "TERMINAL_API"
 )

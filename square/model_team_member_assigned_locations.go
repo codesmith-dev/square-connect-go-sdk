@@ -11,8 +11,8 @@ package square
 
 // An object that represents a team member's assignment to locations.
 type TeamMemberAssignedLocations struct {
-	// The current assignment type of the team member. See [TeamMemberAssignedLocationsAssignmentType](#type-teammemberassignedlocationsassignmenttype) for possible values
+	// The current assignment type of the team member.
 	AssignmentType string `json:"assignment_type,omitempty"`
-	// The locations that the team member is assigned to.
+	// The explicit locations that the team member is assigned to.
 	LocationIds []string `json:"location_ids,omitempty"`
 }

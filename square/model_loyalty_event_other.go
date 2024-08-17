@@ -11,7 +11,7 @@ package square
 
 // Provides metadata when the event `type` is `OTHER`.
 type LoyaltyEventOther struct {
-	// The Square-assigned ID of the `loyalty program`.
+	// The Square-assigned ID of the [loyalty program](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyProgram).
 	LoyaltyProgramId string `json:"loyalty_program_id"`
 	// The number of points added or removed.
 	Points int32 `json:"points"`

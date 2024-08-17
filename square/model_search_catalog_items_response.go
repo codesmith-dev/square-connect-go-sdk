@@ -9,7 +9,7 @@
  */
 package square
 
-// Defines the response body returned from the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint.
+// Defines the response body returned from the [SearchCatalogItems](https://developer.squareup.com/reference/square_2024-07-17/catalog-api/search-catalog-items) endpoint.
 type SearchCatalogItemsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

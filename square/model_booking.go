@@ -15,22 +15,31 @@ type Booking struct {
 	Id string `json:"id,omitempty"`
 	// The revision number for the booking used for optimistic concurrency.
 	Version int32 `json:"version,omitempty"`
-	// The status of the booking, describing where the booking stands with respect to the booking state machine. See [BookingStatus](#type-bookingstatus) for possible values
+	// The status of the booking, describing where the booking stands with respect to the booking state machine.
 	Status string `json:"status,omitempty"`
-	// The timestamp specifying the creation time of this booking.
+	// The RFC 3339 timestamp specifying the creation time of this booking.
 	CreatedAt string `json:"created_at,omitempty"`
-	// The timestamp specifying the most recent update time of this booking.
+	// The RFC 3339 timestamp specifying the most recent update time of this booking.
 	UpdatedAt string `json:"updated_at,omitempty"`
-	// The timestamp specifying the starting time of this booking.
+	// The RFC 3339 timestamp specifying the starting time of this booking.
 	StartAt string `json:"start_at,omitempty"`
-	// The ID of the `Location` object representing the location where the booked service is provided.
+	// The ID of the [Location](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) object representing the location where the booked service is provided. Once set when the booking is created, its value cannot be changed.
 	LocationId string `json:"location_id,omitempty"`
-	// The ID of the `Customer` object representing the customer attending this booking
+	// The ID of the [Customer](https://developer.squareup.com/reference/square_2024-07-17/objects/Customer) object representing the customer receiving the booked service.
 	CustomerId string `json:"customer_id,omitempty"`
-	// The free-text field for the customer to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a relevant `CatalogObject` instance.
+	// The free-text field for the customer to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a relevant [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) instance.
 	CustomerNote string `json:"customer_note,omitempty"`
-	// The free-text field for the seller to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a specific `CatalogObject` instance. This field should not be visible to customers.
+	// The free-text field for the seller to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a specific [CatalogObject](https://developer.squareup.com/reference/square_2024-07-17/objects/CatalogObject) instance. This field should not be visible to customers.
 	SellerNote string `json:"seller_note,omitempty"`
 	// A list of appointment segments for this booking.
 	AppointmentSegments []AppointmentSegment `json:"appointment_segments,omitempty"`
+	// Additional time at the end of a booking. Applications should not make this field visible to customers of a seller.
+	TransitionTimeMinutes int32 `json:"transition_time_minutes,omitempty"`
+	// Whether the booking is of a full business day.
+	AllDay bool `json:"all_day,omitempty"`
+	// The type of location where the booking is held. Access to this field requires seller-level permissions.
+	LocationType   string                 `json:"location_type,omitempty"`
+	CreatorDetails *BookingCreatorDetails `json:"creator_details,omitempty"`
+	// The source of the booking. Access to this field requires seller-level permissions.
+	Source string `json:"source,omitempty"`
 }

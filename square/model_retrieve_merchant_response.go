@@ -9,9 +9,9 @@
  */
 package square
 
-// The response object returned by the [RetrieveMerchant](#endpoint-retrieveMerchant) endpoint.
+// The response object returned by the [RetrieveMerchant](https://developer.squareup.com/reference/square_2024-07-17/merchants-api/retrieve-merchant) endpoint.
 type RetrieveMerchantResponse struct {
 	// Information on errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Merchant *Merchant `json:"merchant,omitempty"`
+	Errors   []ModelError `json:"errors,omitempty"`
+	Merchant *Merchant    `json:"merchant,omitempty"`
 }

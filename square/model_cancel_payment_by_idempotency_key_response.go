@@ -9,7 +9,7 @@
  */
 package square
 
-// The return value from the [CancelPaymentByIdempotencyKey](#endpoint-payments-cancelpaymentbyidempotencykey) endpoint. On success, `errors` is empty.
+// Defines the response returned by  [CancelPaymentByIdempotencyKey](https://developer.squareup.com/reference/square_2024-07-17/payments-api/cancel-payment-by-idempotency-key). On success, `errors` is empty.
 type CancelPaymentByIdempotencyKeyResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

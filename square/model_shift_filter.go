@@ -13,13 +13,13 @@ package square
 type ShiftFilter struct {
 	// Fetch shifts for the specified location.
 	LocationIds []string `json:"location_ids"`
-	// Fetch shifts for the specified employees. DEPRECATED at version 2020-08-26. Use `team_member_ids` instead
+	// Fetch shifts for the specified employees. DEPRECATED at version 2020-08-26. Use `team_member_ids` instead.
 	EmployeeIds []string `json:"employee_ids,omitempty"`
-	// Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
-	Status string `json:"status,omitempty"`
-	Start *TimeRange `json:"start,omitempty"`
-	End *TimeRange `json:"end,omitempty"`
+	// Fetch a `Shift` instance by `Shift.status`.
+	Status  string        `json:"status,omitempty"`
+	Start   *TimeRange    `json:"start,omitempty"`
+	End     *TimeRange    `json:"end,omitempty"`
 	Workday *ShiftWorkday `json:"workday,omitempty"`
-	// Fetch shifts for the specified team members. Replaced `employee_ids` at version \"2020-08-26\"
+	// Fetch shifts for the specified team members. Replaced `employee_ids` at version \"2020-08-26\".
 	TeamMemberIds []string `json:"team_member_ids"`
 }

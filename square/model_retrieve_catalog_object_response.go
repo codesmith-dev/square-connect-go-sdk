@@ -11,7 +11,7 @@ package square
 
 type RetrieveCatalogObjectResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	Errors []ModelError   `json:"errors,omitempty"`
 	Object *CatalogObject `json:"object,omitempty"`
 	// A list of `CatalogObject`s referenced by the object in the `object` field.
 	RelatedObjects []CatalogObject `json:"related_objects,omitempty"`

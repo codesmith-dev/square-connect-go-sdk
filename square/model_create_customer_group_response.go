@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the [CreateCustomerGroup](#endpoint-createcustomergroup) endpoint.  One of `errors` or `group` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [CreateCustomerGroup](https://developer.squareup.com/reference/square_2024-07-17/customer-groups-api/create-customer-group) endpoint.  Either `errors` or `group` is present in a given response (never both).
 type CreateCustomerGroupResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Group *CustomerGroup `json:"group,omitempty"`
+	Errors []ModelError   `json:"errors,omitempty"`
+	Group  *CustomerGroup `json:"group,omitempty"`
 }

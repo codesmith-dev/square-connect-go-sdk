@@ -10,8 +10,10 @@
 package square
 
 type Device struct {
-	// The device's Square-issued ID.
-	Id string `json:"id,omitempty"`
-	// The device's merchant-specified name.
-	Name string `json:"name,omitempty"`
+	// A synthetic identifier for the device. The identifier includes a standardized prefix and is otherwise an opaque id generated from key device fields.
+	Id         string            `json:"id,omitempty"`
+	Attributes *DeviceAttributes `json:"attributes"`
+	// A list of components applicable to the device.
+	Components []Component   `json:"components,omitempty"`
+	Status     *DeviceStatus `json:"status,omitempty"`
 }

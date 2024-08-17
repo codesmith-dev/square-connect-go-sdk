@@ -9,7 +9,7 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the __ListLocations__ endpoint.  One of `errors` or `locations` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [ListLocations](https://developer.squareup.com/reference/square_2024-07-17/locations-api/list-locations) endpoint.  Either `errors` or `locations` is present in a given response (never both).
 type ListLocationsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

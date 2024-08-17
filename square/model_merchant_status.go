@@ -13,6 +13,6 @@ type MerchantStatus string
 
 // List of MerchantStatus
 const (
-	ACTIVE_MerchantStatus MerchantStatus = "ACTIVE"
+	ACTIVE_MerchantStatus   MerchantStatus = "ACTIVE"
 	INACTIVE_MerchantStatus MerchantStatus = "INACTIVE"
 )

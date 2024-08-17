@@ -12,6 +12,6 @@ package square
 // A response that includes the `LoyaltyEvent` published for redeeming the reward.
 type RedeemLoyaltyRewardResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Event *LoyaltyEvent `json:"event,omitempty"`
+	Errors []ModelError  `json:"errors,omitempty"`
+	Event  *LoyaltyEvent `json:"event,omitempty"`
 }

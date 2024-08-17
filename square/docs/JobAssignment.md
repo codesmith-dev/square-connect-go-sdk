@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **JobTitle** | **string** | The title of the job. | [default to null]
-**PayType** | **string** | The current pay type for the job assignment used to calculate the pay amount in a pay period. See [JobAssignmentPayType](#type-jobassignmentpaytype) for possible values | [default to null]
+**PayType** | **string** | The current pay type for the job assignment used to calculate the pay amount in a pay period. | [default to null]
 **HourlyRate** | [***Money**](Money.md) |  | [optional] [default to null]
 **AnnualRate** | [***Money**](Money.md) |  | [optional] [default to null]
 **WeeklyHours** | **int32** | The planned hours per week for the job. Set if the job &#x60;PayType&#x60; is &#x60;SALARY&#x60;. | [optional] [default to null]

@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that are included in the response from the [CreateSubscription](#endpoint-subscriptions-createsubscription) endpoint.
+// Defines output parameters in a response from the [CreateSubscription](https://developer.squareup.com/reference/square_2024-07-17/subscriptions-api/create-subscription) endpoint.
 type CreateSubscriptionResponse struct {
-	// Information about errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	// Errors encountered during the request.
+	Errors       []ModelError  `json:"errors,omitempty"`
 	Subscription *Subscription `json:"subscription,omitempty"`
 }

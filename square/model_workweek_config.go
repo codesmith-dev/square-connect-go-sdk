@@ -9,18 +9,18 @@
  */
 package square
 
-// Sets the Day of the week and hour of the day that a business starts a work week. Used for the calculation of overtime pay.
+// Sets the day of the week and hour of the day that a business starts a workweek. This is used to calculate overtime pay.
 type WorkweekConfig struct {
-	// UUID for this object
+	// The UUID for this object.
 	Id string `json:"id,omitempty"`
-	// The day of the week on which a business week cuts over for compensation purposes. See [Weekday](#type-weekday) for possible values
+	// The day of the week on which a business week starts for compensation purposes.
 	StartOfWeek string `json:"start_of_week"`
-	// The local time at which a business week cuts over. Represented as a string in `HH:MM` format (`HH:MM:SS` is also accepted, but seconds are truncated).
+	// The local time at which a business week starts. Represented as a string in `HH:MM` format (`HH:MM:SS` is also accepted, but seconds are truncated).
 	StartOfDayLocalTime string `json:"start_of_day_local_time"`
-	// Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If not provided, Square executes a blind write; potentially overwriting data from another write.
+	// Used for resolving concurrency issues. The request fails if the version provided does not match the server version at the time of the request. If not provided, Square executes a blind write; potentially overwriting data from another write.
 	Version int32 `json:"version,omitempty"`
-	// A read-only timestamp in RFC 3339 format; presented in UTC
+	// A read-only timestamp in RFC 3339 format; presented in UTC.
 	CreatedAt string `json:"created_at,omitempty"`
-	// A read-only timestamp in RFC 3339 format; presented in UTC
+	// A read-only timestamp in RFC 3339 format; presented in UTC.
 	UpdatedAt string `json:"updated_at,omitempty"`
 }

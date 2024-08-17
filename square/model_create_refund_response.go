@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the [CreateRefund](#endpoint-createrefund) endpoint.  One of `errors` or `refund` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [CreateRefund](https://developer.squareup.com/reference/square_2024-07-17/transactions-api/create-refund) endpoint.  One of `errors` or `refund` is present in a given response (never both).
 type CreateRefundResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	Refund *Refund `json:"refund,omitempty"`
+	Refund *Refund      `json:"refund,omitempty"`
 }

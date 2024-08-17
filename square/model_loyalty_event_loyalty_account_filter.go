@@ -11,6 +11,6 @@ package square
 
 // Filter events by loyalty account.
 type LoyaltyEventLoyaltyAccountFilter struct {
-	// The ID of the `loyalty account` associated with loyalty events.
+	// The ID of the [loyalty account](https://developer.squareup.com/reference/square_2024-07-17/objects/LoyaltyAccount) associated with loyalty events.
 	LoyaltyAccountId string `json:"loyalty_account_id"`
 }

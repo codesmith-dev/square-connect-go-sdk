@@ -11,6 +11,6 @@ package square
 
 // Filter events by the order associated with the event.
 type LoyaltyEventOrderFilter struct {
-	// The ID of the `order` associated with the event.
+	// The ID of the [order](https://developer.squareup.com/reference/square_2024-07-17/objects/Order) associated with the event.
 	OrderId string `json:"order_id"`
 }

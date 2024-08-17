@@ -12,5 +12,5 @@ package square
 // Describes query criteria for searching invoices.
 type InvoiceQuery struct {
 	Filter *InvoiceFilter `json:"filter"`
-	Sort *InvoiceSort `json:"sort,omitempty"`
+	Sort   *InvoiceSort   `json:"sort,omitempty"`
 }

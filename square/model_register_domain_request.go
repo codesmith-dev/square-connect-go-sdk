@@ -9,8 +9,8 @@
  */
 package square
 
-// Defines the parameters that can be included in the body of a request to the [RegisterDomain](#endpoint-registerdomain) endpoint.
+// Defines the parameters that can be included in the body of a request to the [RegisterDomain](https://developer.squareup.com/reference/square_2024-07-17/apple-pay-api/register-domain) endpoint.
 type RegisterDomainRequest struct {
-	// A domain name as described in RFC-1034 that will be registered with ApplePay
+	// A domain name as described in RFC-1034 that will be registered with ApplePay.
 	DomainName string `json:"domain_name"`
 }

@@ -9,6 +9,5 @@
  */
 package square
 
-// Defines the fields that are included in requests to the DeleteCustomerCard endpoint.
-type DeleteCustomerCardRequest struct {
-}
+// Defines the fields that are included in requests to the `DeleteCustomerCard` endpoint.
+type DeleteCustomerCardRequest struct{}

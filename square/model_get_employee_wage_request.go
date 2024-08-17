@@ -9,6 +9,5 @@
  */
 package square
 
-// A request to get an `EmployeeWage`
-type GetEmployeeWageRequest struct {
-}
+// A request to get an `EmployeeWage`.
+type GetEmployeeWageRequest struct{}

@@ -12,6 +12,6 @@ package square
 // Defines the fields in a `CreateDisputeEvidenceText` response.
 type CreateDisputeEvidenceTextResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	Errors   []ModelError     `json:"errors,omitempty"`
 	Evidence *DisputeEvidence `json:"evidence,omitempty"`
 }

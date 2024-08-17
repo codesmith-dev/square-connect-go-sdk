@@ -10,6 +10,8 @@
 package square
 
 type RevokeTokenResponse struct {
-	// If the request is successful, this is true.
+	// If the request is successful, this is `true`.
 	Success bool `json:"success,omitempty"`
+	// Any errors that occurred during the request.
+	Errors []ModelError `json:"errors,omitempty"`
 }

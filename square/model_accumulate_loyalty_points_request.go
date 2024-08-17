@@ -9,11 +9,11 @@
  */
 package square
 
-// A request to accumulate points for a purchase.
+// Represents an [AccumulateLoyaltyPoints](https://developer.squareup.com/reference/square_2024-07-17/loyalty-api/accumulate-loyalty-points) request.
 type AccumulateLoyaltyPointsRequest struct {
 	AccumulatePoints *LoyaltyEventAccumulatePoints `json:"accumulate_points"`
 	// A unique string that identifies the `AccumulateLoyaltyPoints` request.  Keys can be any valid string but must be unique for every request.
 	IdempotencyKey string `json:"idempotency_key"`
-	// The `location` where the purchase was made.
+	// The [location](https://developer.squareup.com/reference/square_2024-07-17/objects/Location) where the purchase was made.
 	LocationId string `json:"location_id"`
 }

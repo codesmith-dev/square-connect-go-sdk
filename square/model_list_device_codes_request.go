@@ -10,12 +10,12 @@
 package square
 
 type ListDeviceCodesRequest struct {
-	// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
+	// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`
 	// If specified, only returns DeviceCodes of the specified location. Returns DeviceCodes of all locations if empty.
 	LocationId string `json:"location_id,omitempty"`
-	// If specified, only returns DeviceCodes targeting the specified product type. Returns DeviceCodes of all product types if empty. See [ProductType](#type-producttype) for possible values
+	// If specified, only returns DeviceCodes targeting the specified product type. Returns DeviceCodes of all product types if empty.
 	ProductType string `json:"product_type,omitempty"`
-	// If specified, returns DeviceCodes with the specified statuses. Returns DeviceCodes of status `PAIRED` and `UNPAIRED` if empty. See [DeviceCodeStatus](#type-devicecodestatus) for possible values
+	// If specified, returns DeviceCodes with the specified statuses. Returns DeviceCodes of status `PAIRED` and `UNPAIRED` if empty.
 	Status []string `json:"status,omitempty"`
 }

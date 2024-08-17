@@ -11,8 +11,8 @@ package square
 
 // Sets the sort order of search results.
 type ShiftSort struct {
-	// The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values
+	// The field to sort on.
 	Field string `json:"field,omitempty"`
-	// The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values
+	// The order in which results are returned. Defaults to DESC.
 	Order string `json:"order,omitempty"`
 }

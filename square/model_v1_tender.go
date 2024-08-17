@@ -13,7 +13,7 @@ package square
 type V1Tender struct {
 	// The tender's unique ID.
 	Id string `json:"id,omitempty"`
-	// The type of tender. See [V1TenderType](#type-v1tendertype) for possible values
+	// The type of tender.
 	Type_ string `json:"type,omitempty"`
 	// A human-readable description of the tender.
 	Name string `json:"name,omitempty"`
@@ -21,22 +21,22 @@ type V1Tender struct {
 	EmployeeId string `json:"employee_id,omitempty"`
 	// The URL of the receipt for the tender.
 	ReceiptUrl string `json:"receipt_url,omitempty"`
-	// The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values
+	// The brand of credit card provided.
 	CardBrand string `json:"card_brand,omitempty"`
 	// The last four digits of the provided credit card's account number.
 	PanSuffix string `json:"pan_suffix,omitempty"`
-	// The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values
+	// The tender's unique ID.
 	EntryMethod string `json:"entry_method,omitempty"`
 	// Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER.
-	PaymentNote string `json:"payment_note,omitempty"`
-	TotalMoney *V1Money `json:"total_money,omitempty"`
+	PaymentNote   string   `json:"payment_note,omitempty"`
+	TotalMoney    *V1Money `json:"total_money,omitempty"`
 	TenderedMoney *V1Money `json:"tendered_money,omitempty"`
 	// The time when the tender was created, in ISO 8601 format.
 	TenderedAt string `json:"tendered_at,omitempty"`
 	// The time when the tender was settled, in ISO 8601 format.
-	SettledAt string `json:"settled_at,omitempty"`
+	SettledAt       string   `json:"settled_at,omitempty"`
 	ChangeBackMoney *V1Money `json:"change_back_money,omitempty"`
-	RefundedMoney *V1Money `json:"refunded_money,omitempty"`
+	RefundedMoney   *V1Money `json:"refunded_money,omitempty"`
 	// Indicates whether or not the tender is associated with an exchange. If is_exchange is true, the tender represents the value of goods returned in an exchange not the actual money paid. The exchange value reduces the tender amounts needed to pay for items purchased in the exchange.
 	IsExchange bool `json:"is_exchange,omitempty"`
 }

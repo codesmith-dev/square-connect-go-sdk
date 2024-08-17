@@ -9,5 +9,4 @@
  */
 package square
 
-type RetrieveBusinessBookingProfileRequest struct {
-}
+type RetrieveBusinessBookingProfileRequest struct{}

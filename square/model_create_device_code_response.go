@@ -11,6 +11,6 @@ package square
 
 type CreateDeviceCodeResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	DeviceCode *DeviceCode `json:"device_code,omitempty"`
+	Errors     []ModelError `json:"errors,omitempty"`
+	DeviceCode *DeviceCode  `json:"device_code,omitempty"`
 }

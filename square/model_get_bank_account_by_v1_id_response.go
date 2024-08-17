@@ -12,6 +12,6 @@ package square
 // Response object returned by GetBankAccountByV1Id.
 type GetBankAccountByV1IdResponse struct {
 	// Information on errors encountered during the request.
-	Errors []ModelError `json:"errors,omitempty"`
+	Errors      []ModelError `json:"errors,omitempty"`
 	BankAccount *BankAccount `json:"bank_account,omitempty"`
 }

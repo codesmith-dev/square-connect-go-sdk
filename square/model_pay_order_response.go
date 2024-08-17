@@ -9,9 +9,9 @@
  */
 package square
 
-// Defines the fields that are included in the response body of a request to the [PayOrder](#endpoint-payorder) endpoint.
+// Defines the fields that are included in the response body of a request to the [PayOrder](https://developer.squareup.com/reference/square_2024-07-17/orders-api/pay-order) endpoint.
 type PayOrderResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	Order *Order `json:"order,omitempty"`
+	Order  *Order       `json:"order,omitempty"`
 }

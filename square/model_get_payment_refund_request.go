@@ -9,6 +9,5 @@
  */
 package square
 
-// Retrieves a specific `Refund` using the `refund_id`.
-type GetPaymentRefundRequest struct {
-}
+// Describes a request to retrieve a refund using [GetPaymentRefund](https://developer.squareup.com/reference/square_2024-07-17/refunds-api/get-payment-refund).
+type GetPaymentRefundRequest struct{}

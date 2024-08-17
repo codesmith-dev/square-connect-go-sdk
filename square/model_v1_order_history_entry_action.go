@@ -13,11 +13,11 @@ type V1OrderHistoryEntryAction string
 
 // List of V1OrderHistoryEntryAction
 const (
-	ORDER_PLACED_V1OrderHistoryEntryAction V1OrderHistoryEntryAction = "ORDER_PLACED"
-	DECLINED_V1OrderHistoryEntryAction V1OrderHistoryEntryAction = "DECLINED"
+	ORDER_PLACED_V1OrderHistoryEntryAction     V1OrderHistoryEntryAction = "ORDER_PLACED"
+	DECLINED_V1OrderHistoryEntryAction         V1OrderHistoryEntryAction = "DECLINED"
 	PAYMENT_RECEIVED_V1OrderHistoryEntryAction V1OrderHistoryEntryAction = "PAYMENT_RECEIVED"
-	CANCELED_V1OrderHistoryEntryAction V1OrderHistoryEntryAction = "CANCELED"
-	COMPLETED_V1OrderHistoryEntryAction V1OrderHistoryEntryAction = "COMPLETED"
-	REFUNDED_V1OrderHistoryEntryAction V1OrderHistoryEntryAction = "REFUNDED"
-	EXPIRED_V1OrderHistoryEntryAction V1OrderHistoryEntryAction = "EXPIRED"
+	CANCELED_V1OrderHistoryEntryAction         V1OrderHistoryEntryAction = "CANCELED"
+	COMPLETED_V1OrderHistoryEntryAction        V1OrderHistoryEntryAction = "COMPLETED"
+	REFUNDED_V1OrderHistoryEntryAction         V1OrderHistoryEntryAction = "REFUNDED"
+	EXPIRED_V1OrderHistoryEntryAction          V1OrderHistoryEntryAction = "EXPIRED"
 )

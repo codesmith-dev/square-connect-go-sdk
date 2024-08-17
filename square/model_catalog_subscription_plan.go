@@ -9,10 +9,18 @@
  */
 package square
 
-// Describes a subscription plan. For more information, see [Set Up and Manage a Subscription Plan](/docs/subscriptions-api/setup-plan).
+// Describes a subscription plan. A subscription plan represents what you want to sell in a subscription model, and includes references to each of the associated subscription plan variations. For more information, see [Subscription Plans and Variations](https://developer.squareup.com/docs/subscriptions-api/plans-and-variations).
 type CatalogSubscriptionPlan struct {
 	// The name of the plan.
-	Name string `json:"name,omitempty"`
-	// A list of SubscriptionPhase containing the `SubscriptionPhase` for this plan.
+	Name string `json:"name"`
+	// A list of SubscriptionPhase containing the [SubscriptionPhase](https://developer.squareup.com/reference/square_2024-07-17/objects/SubscriptionPhase) for this plan. This field it required. Not including this field will throw a REQUIRED_FIELD_MISSING error
 	Phases []SubscriptionPhase `json:"phases,omitempty"`
+	// The list of subscription plan variations available for this product
+	SubscriptionPlanVariations []CatalogObject `json:"subscription_plan_variations,omitempty"`
+	// The list of IDs of `CatalogItems` that are eligible for subscription by this SubscriptionPlan's variations.
+	EligibleItemIds []string `json:"eligible_item_ids,omitempty"`
+	// The list of IDs of `CatalogCategory` that are eligible for subscription by this SubscriptionPlan's variations.
+	EligibleCategoryIds []string `json:"eligible_category_ids,omitempty"`
+	// If true, all items in the merchant's catalog are subscribable by this SubscriptionPlan.
+	AllItems bool `json:"all_items,omitempty"`
 }

@@ -62,7 +62,7 @@ func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		BasePath:      "https://connect.squareup.com/",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "Square-Connect-Go/2.20210121.0",
+		UserAgent:     "Square-Connect-go/2.20180712.0",
 	}
 	return cfg
 }

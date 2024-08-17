@@ -10,10 +10,10 @@
 package square
 
 type ListCashDrawerShiftsResponse struct {
-	// A collection of CashDrawerShiftSummary objects for shifts that match the query.
-	Items []CashDrawerShiftSummary `json:"items,omitempty"`
 	// Opaque cursor for fetching the next page of results. Cursor is not present in the last page of results.
 	Cursor string `json:"cursor,omitempty"`
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
+	// A collection of CashDrawerShiftSummary objects for shifts that match the query.
+	CashDrawerShifts []CashDrawerShiftSummary `json:"cash_drawer_shifts,omitempty"`
 }

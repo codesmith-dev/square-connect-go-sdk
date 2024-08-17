@@ -10,5 +10,4 @@
 package square
 
 // Describes a `GetInvoice` request.
-type GetInvoiceRequest struct {
-}
+type GetInvoiceRequest struct{}

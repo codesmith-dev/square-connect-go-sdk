@@ -9,11 +9,13 @@
  */
 package square
 
-// Defines the fields included in the request body for the SearchCustomers endpoint.
+// Defines the fields that are included in the request body of a request to the `SearchCustomers` endpoint.
 type SearchCustomersRequest struct {
-	// Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
+	// Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
 	Cursor string `json:"cursor,omitempty"`
-	// A limit on the number of results to be returned in a single page. The limit is advisory - the implementation may return more or fewer results. If the supplied limit is negative, zero, or is higher than the maximum limit of 100, it will be ignored.
-	Limit int64 `json:"limit,omitempty"`
+	// The maximum number of results to return in a single page. This limit is advisory. The response might contain more or fewer results. If the specified limit is invalid, Square returns a `400 VALUE_TOO_LOW` or `400 VALUE_TOO_HIGH` error. The default value is 100.  For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
+	Limit int64          `json:"limit,omitempty"`
 	Query *CustomerQuery `json:"query,omitempty"`
+	// Indicates whether to return the total count of matching customers in the `count` field of the response.  The default value is `false`.
+	Count bool `json:"count,omitempty"`
 }

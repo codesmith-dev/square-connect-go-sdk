@@ -11,7 +11,7 @@ package square
 
 // V1UpdateOrderRequest
 type V1UpdateOrderRequest struct {
-	// The action to perform on the order (COMPLETE, CANCEL, or REFUND). See [V1UpdateOrderRequestAction](#type-v1updateorderrequestaction) for possible values
+	// The action to perform on the order (COMPLETE, CANCEL, or REFUND).
 	Action string `json:"action"`
 	// The tracking number of the shipment associated with the order. Only valid if action is COMPLETE.
 	ShippedTrackingNumber string `json:"shipped_tracking_number,omitempty"`

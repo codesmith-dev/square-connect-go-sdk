@@ -10,5 +10,4 @@
 package square
 
 // A request to delete a loyalty reward.
-type DeleteLoyaltyRewardRequest struct {
-}
+type DeleteLoyaltyRewardRequest struct{}

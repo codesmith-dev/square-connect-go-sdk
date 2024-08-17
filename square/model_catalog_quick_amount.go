@@ -11,8 +11,8 @@ package square
 
 // Represents a Quick Amount in the Catalog.
 type CatalogQuickAmount struct {
-	// Represents the type of the Quick Amount. See [CatalogQuickAmountType](#type-catalogquickamounttype) for possible values
-	Type_ string `json:"type"`
+	// Represents the type of the Quick Amount.
+	Type_  string `json:"type"`
 	Amount *Money `json:"amount"`
 	// Describes the ranking of the Quick Amount provided by machine learning model, in the range [0, 100]. MANUAL type amount will always have score = 100.
 	Score int64 `json:"score,omitempty"`

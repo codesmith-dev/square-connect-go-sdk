@@ -9,6 +9,5 @@
  */
 package square
 
-// A request to delete a `BreakType`
-type DeleteBreakTypeRequest struct {
-}
+// A request to delete a `BreakType`.
+type DeleteBreakTypeRequest struct{}

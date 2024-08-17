@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LocationId** | **string** |  | [optional] [default to null]
-**Status** | **string** | Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values | [optional] [default to null]
+**Status** | **string** | Specifies the EmployeeStatus to filter the employee by. | [optional] [default to null]
 **Limit** | **int32** | The number of employees to be returned on each page. | [optional] [default to null]
 **Cursor** | **string** | The token required to retrieve the specified page of results. | [optional] [default to null]
 

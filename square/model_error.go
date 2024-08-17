@@ -9,11 +9,11 @@
  */
 package square
 
-// Represents an error encountered during a request to the Connect API.  See [Handling errors](#handlingerrors) for more information.
+// Represents an error encountered during a request to the Connect API.  See [Handling errors](https://developer.squareup.com/docs/build-basics/handling-errors) for more information.
 type ModelError struct {
-	// The high-level category for the error. See [ErrorCategory](#type-errorcategory) for possible values
+	// The high-level category for the error.
 	Category string `json:"category"`
-	// The specific code of the error. See [ErrorCode](#type-errorcode) for possible values
+	// The specific code of the error.
 	Code string `json:"code"`
 	// A human-readable description of the error for debugging purposes.
 	Detail string `json:"detail,omitempty"`

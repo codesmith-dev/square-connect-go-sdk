@@ -9,9 +9,9 @@
  */
 package square
 
-// A response that includes the loyalty event that  resulted from the successful API call.
+// Represents an [AdjustLoyaltyPoints](https://developer.squareup.com/reference/square_2024-07-17/loyalty-api/adjust-loyalty-points) request.
 type AdjustLoyaltyPointsResponse struct {
 	// Any errors that occurred during the request.
-	Errors []ModelError `json:"errors,omitempty"`
-	Event *LoyaltyEvent `json:"event,omitempty"`
+	Errors []ModelError  `json:"errors,omitempty"`
+	Event  *LoyaltyEvent `json:"event,omitempty"`
 }
